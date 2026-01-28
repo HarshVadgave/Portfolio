@@ -11,8 +11,8 @@
 <title>Harsh Vadgave | Frontend Developer Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<!-- Lucide Icons CDN -->
-<script src="https://unpkg.com/lucide@latest"></script>
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
 :root{
@@ -37,7 +37,7 @@ html{
 body{
   background:var(--bg);
   color:var(--dark);
-  padding-bottom:80px; /* Space for floating navbar */
+  padding-bottom:80px;
 }
 
 /* FLOATING BOTTOM NAVBAR */
@@ -77,9 +77,8 @@ nav a:hover, nav a.active{
   color:white;
 }
 
-nav a svg{
-  width:20px;
-  height:20px;
+nav a i{
+  font-size:20px;
 }
 
 /* GENERAL SECTION */
@@ -149,7 +148,7 @@ section{
   color:white;
 }
 
-/* PROFILE IMAGE */
+/* PROFILE IMAGE - BLOB SHAPE */
 .hero-image{
   display:flex;
   justify-content:center;
@@ -354,7 +353,7 @@ footer{
   }
   
   .hero-image{
-    order:-1; /* Image appears first on mobile */
+    order:-1;
   }
   
   .profile-pic{
@@ -388,9 +387,8 @@ footer{
     font-size:10px;
   }
   
-  nav a svg{
-    width:18px;
-    height:18px;
+  nav a i{
+    font-size:18px;
   }
 }
 
@@ -411,18 +409,12 @@ footer{
   }
   
   nav a span{
-    display:none; /* Hide text labels on very small screens */
+    display:none;
   }
   
   .profile-pic{
     max-width:220px;
   }
-}
-
-/* Active nav link highlighting */
-.nav-link.active{
-  background:var(--primary);
-  color:white;
 }
 </style>
 </head>
@@ -432,23 +424,23 @@ footer{
 <!-- FLOATING BOTTOM NAVBAR -->
 <nav>
   <a href="#home" class="nav-link active">
-    <i data-lucide="home"></i>
+    <i class="fas fa-home"></i>
     <span>Home</span>
   </a>
   <a href="#about" class="nav-link">
-    <i data-lucide="user"></i>
+    <i class="fas fa-user"></i>
     <span>About</span>
   </a>
   <a href="#skills" class="nav-link">
-    <i data-lucide="code-2"></i>
+    <i class="fas fa-code"></i>
     <span>Skills</span>
   </a>
   <a href="#projects" class="nav-link">
-    <i data-lucide="folder-open"></i>
+    <i class="fas fa-folder-open"></i>
     <span>Projects</span>
   </a>
   <a href="#contact" class="nav-link">
-    <i data-lucide="mail"></i>
+    <i class="fas fa-envelope"></i>
     <span>Contact</span>
   </a>
 </nav>
@@ -528,7 +520,7 @@ footer{
   <div class="contact-wrapper">
     <div class="contact-info">
       <p>Want to work together or need a website?</p>
-      <p><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4e262f3c3d26382f2a292f382b7f78777778770e29232f2722602d2123">[email&#160;protected]</a></p>
+      <p><strong>Email:</strong> harshvadgave169969@gmail.com</p>
       <p><strong>WhatsApp:</strong> 7841811323</p>
     </div>
 
@@ -545,10 +537,7 @@ footer{
   © 2026 Harsh Vadgave • Built with ❤️
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// Initialize Lucide icons
-lucide.createIcons();
-
+<script>
 // Contact form submission
 const scriptURL = "https://script.google.com/macros/s/AKfycbwrQYvr3WeE0cbKmAYToR3aOkcUZMkOJl1-7LC6LLsIPFP1wzoFcvMRJabpkDvP8Pvowg/exec";
 const form = document.getElementById("contactForm");
@@ -573,5 +562,18 @@ window.addEventListener('scroll', () => {
     const sectionTop = section.offsetTop;
     const sectionHeight = section.clientHeight;
     if (scrollY >= (sectionTop - 200)) {
-      current = se
+      current = section.getAttribute('id');
+    }
+  });
 
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === `#${current}`) {
+      link.classList.add('active');
+    }
+  });
+});
+</script>
+
+</body>
+</html>
