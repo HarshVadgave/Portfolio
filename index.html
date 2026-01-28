@@ -160,16 +160,32 @@ section{
   width:100%;
   max-width:400px;
   aspect-ratio:1;
-  border-radius:50%;
   object-fit:cover;
+  border-radius:30% 70% 70% 30% / 30% 30% 70% 70%;
   border:6px solid var(--primary);
   box-shadow:0 20px 60px rgba(255,159,28,.2);
-  transition:0.3s;
+  animation:blobMorph 8s ease-in-out infinite;
+  transition:transform 0.3s ease;
 }
 
 .profile-pic:hover{
   transform:scale(1.05);
   box-shadow:0 25px 70px rgba(255,159,28,.3);
+}
+
+@keyframes blobMorph{
+  0%, 100%{
+    border-radius:30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+  25%{
+    border-radius:58% 42% 75% 25% / 76% 46% 54% 24%;
+  }
+  50%{
+    border-radius:50% 50% 33% 67% / 55% 27% 73% 45%;
+  }
+  75%{
+    border-radius:33% 67% 58% 42% / 63% 68% 32% 37%;
+  }
 }
 
 /* ABOUT */
@@ -452,7 +468,7 @@ footer{
   
   <div class="hero-image">
     <!-- REPLACE THIS URL WITH YOUR ACTUAL PROFILE IMAGE -->
-    <img src="profile.jpeg" alt="Harsh Vadgave" class="profile-pic">
+    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Harsh" alt="Harsh Vadgave" class="profile-pic">
     <!-- You can use: 
          - Your own hosted image: src="your-image.jpg"
          - Or upload to imgur/cloudinary and use that link
@@ -515,7 +531,7 @@ footer{
   <div class="contact-wrapper">
     <div class="contact-info">
       <p>Want to work together or need a website?</p>
-      <p><strong>Email:</strong> harshvadgave169969@gmail.com</p>
+      <p><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4e262f3c3d26382f2a292f382b7f78777778770e29232f2722602d2123">[email&#160;protected]</a></p>
       <p><strong>WhatsApp:</strong> 7841811323</p>
     </div>
 
@@ -532,7 +548,7 @@ footer{
   © 2026 Harsh Vadgave • Built with ❤️
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // Initialize Lucide icons
 lucide.createIcons();
 
@@ -560,18 +576,4 @@ window.addEventListener('scroll', () => {
     const sectionTop = section.offsetTop;
     const sectionHeight = section.clientHeight;
     if (scrollY >= (sectionTop - 200)) {
-      current = section.getAttribute('id');
-    }
-  });
-
-  navLinks.forEach(link => {
-    link.classList.remove('active');
-    if (link.getAttribute('href') === `#${current}`) {
-      link.classList.add('active');
-    }
-  });
-});
-</script>
-
-</body>
-</html>
+      current = se
