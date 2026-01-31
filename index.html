@@ -675,7 +675,16 @@ footer{
 }
 .upi-error.show{ opacity:1; }
 
-/* STEP 3 : THANK YOU */
+/* STEP 3 : VIDEO PLAYER */
+.video-box{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  z-index:2;
+}
+
+/* STEP 4 : THANK YOU */
 .thankyou-box{
   background:linear-gradient(145deg, #1e1040, #2a1550);
   border-radius:24px;
@@ -828,7 +837,17 @@ footer{
     </div>
   </div>
 
-  <!-- STEP 3: Thank You -->
+  <!-- STEP 3: Video Player -->
+  <div class="bday-step" id="step-video">
+    <div class="video-box">
+      <video id="bdayVideo" autoplay playsinline style="max-width:90vw; max-height:80vh; border-radius:20px; box-shadow:0 20px 60px rgba(0,0,0,.4);">
+        <source src="video.mp4" type="video/mp4">
+        Your browser doesn't support video.
+      </video>
+    </div>
+  </div>
+
+  <!-- STEP 4: Thank You -->
   <div class="bday-step" id="step-thankyou">
     <div class="thankyou-box">
       <div class="ty-emoji">🥳</div>
@@ -1126,7 +1145,7 @@ function goToStep(stepId){
 
 
 // ============================================================
-// 4. UPI SUBMISSION → Google Sheets
+// 4. UPI SUBMISSION → Google Sheets → Video
 // ============================================================
 (function(){
   const SHEET_URL = "https://script.google.com/macros/s/AKfycby21VePV29y2cwn8kBhLYxjYltYbE7Fey8u2sKbfMMfi3xejELWfzcKGXGYkV8WLGkN/exec";
@@ -1159,18 +1178,40 @@ function goToStep(stepId){
 
       await fetch(SHEET_URL, { method:'POST', body: formData });
       fireConfetti();
-      setTimeout(()=> goToStep('step-thankyou'), 600);
+      // Go to video step instead of thank you
+      setTimeout(()=> goToStep('step-video'), 600);
     } catch(err){
       // Apps Script POST returns opaque response — still works
       fireConfetti();
-      setTimeout(()=> goToStep('step-thankyou'), 600);
+      setTimeout(()=> goToStep('step-video'), 600);
     }
   }
 })();
 
 
 // ============================================================
-// 5. CLOSE OVERLAY
+// 5. VIDEO PLAYER — Auto-advance when video ends
+// ============================================================
+(function(){
+  const video = document.getElementById('bdayVideo');
+  
+  // When video ends, close the overlay and show portfolio
+  video.addEventListener('ended', ()=>{
+    setTimeout(()=>{
+      document.getElementById('bdayOverlay').classList.add('hidden');
+    }, 500);
+  });
+
+  // Optional: if user clicks video, toggle play/pause
+  video.addEventListener('click', ()=>{
+    if(video.paused) video.play();
+    else video.pause();
+  });
+})();
+
+
+// ============================================================
+// 6. CLOSE OVERLAY (from thank you screen if needed)
 // ============================================================
 document.getElementById('closeBdayBtn').addEventListener('click', ()=>{
   document.getElementById('bdayOverlay').classList.add('hidden');
@@ -1178,7 +1219,7 @@ document.getElementById('closeBdayBtn').addEventListener('click', ()=>{
 
 
 // ============================================================
-// 6. CONFETTI ENGINE
+// 7. CONFETTI ENGINE
 // ============================================================
 (function(){
   const canvas  = document.getElementById('confetti-canvas');
@@ -1254,7 +1295,7 @@ document.getElementById('closeBdayBtn').addEventListener('click', ()=>{
 
 
 // ============================================================
-// 7. ORIGINAL PORTFOLIO: contact form + nav scroll
+// 8. ORIGINAL PORTFOLIO: contact form + nav scroll
 // ============================================================
 (function(){
   const scriptURL = "https://script.google.com/macros/s/AKfycbwrQYvr3WeE0cbKmAYToR3aOkcUZMkOJl1-7LC6LLsIPFP1wzoFcvMRJabpkDvP8Pvowg/exec";
