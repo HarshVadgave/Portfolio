@@ -10,8 +10,7 @@
 
 <title>Harsh Vadgave | Frontend Developer Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<!-- Font Awesome Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fredoka:wght@400;500;600;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
@@ -30,9 +29,7 @@
   font-family:'Inter',sans-serif;
 }
 
-html{
-  scroll-behavior:smooth;
-}
+html{ scroll-behavior:smooth; }
 
 body{
   background:var(--bg);
@@ -40,7 +37,6 @@ body{
   padding-bottom:80px;
 }
 
-/* FLOATING BOTTOM NAVBAR */
 nav{
   position:fixed;
   bottom:20px;
@@ -77,11 +73,8 @@ nav a:hover, nav a.active{
   color:white;
 }
 
-nav a i{
-  font-size:20px;
-}
+nav a i{ font-size:20px; }
 
-/* GENERAL SECTION */
 section{
   min-height:100vh;
   padding:80px 8% 80px;
@@ -90,7 +83,6 @@ section{
   justify-content:center;
 }
 
-/* HERO */
 .hero{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -103,9 +95,7 @@ section{
   line-height:1.2;
 }
 
-.hero-content span{
-  color:var(--primary);
-}
+.hero-content span{ color:var(--primary); }
 
 .hero-content p{
   margin-top:18px;
@@ -148,7 +138,6 @@ section{
   color:white;
 }
 
-/* PROFILE IMAGE - BLOB SHAPE */
 .hero-image{
   display:flex;
   justify-content:center;
@@ -173,38 +162,16 @@ section{
 }
 
 @keyframes blobMorph{
-  0%, 100%{
-    border-radius:30% 70% 70% 30% / 30% 30% 70% 70%;
-  }
-  25%{
-    border-radius:58% 42% 75% 25% / 76% 46% 54% 24%;
-  }
-  50%{
-    border-radius:50% 50% 33% 67% / 55% 27% 73% 45%;
-  }
-  75%{
-    border-radius:33% 67% 58% 42% / 63% 68% 32% 37%;
-  }
+  0%, 100%{ border-radius:30% 70% 70% 30% / 30% 30% 70% 70%; }
+  25%{ border-radius:58% 42% 75% 25% / 76% 46% 54% 24%; }
+  50%{ border-radius:50% 50% 33% 67% / 55% 27% 73% 45%; }
+  75%{ border-radius:33% 67% 58% 42% / 63% 68% 32% 37%; }
 }
 
-/* ABOUT */
-.about h2{
-  margin-bottom:20px;
-  font-size:clamp(28px,4vw,42px);
-}
+.about h2{ margin-bottom:20px; font-size:clamp(28px,4vw,42px); }
+.about p{ max-width:720px; line-height:1.8; color:#334155; font-size:17px; }
 
-.about p{
-  max-width:720px;
-  line-height:1.8;
-  color:#334155;
-  font-size:17px;
-}
-
-/* SKILLS */
-#skills h2{
-  margin-bottom:20px;
-  font-size:clamp(28px,4vw,42px);
-}
+#skills h2{ margin-bottom:20px; font-size:clamp(28px,4vw,42px); }
 
 .skills-grid{
   margin-top:40px;
@@ -228,11 +195,7 @@ section{
   box-shadow:0 15px 40px rgba(255,159,28,.15);
 }
 
-/* PROJECTS */
-#projects h2{
-  margin-bottom:20px;
-  font-size:clamp(28px,4vw,42px);
-}
+#projects h2{ margin-bottom:20px; font-size:clamp(28px,4vw,42px); }
 
 .projects-grid{
   margin-top:40px;
@@ -254,32 +217,12 @@ section{
   gap:12px;
 }
 
-.project-card h3{
-  font-size:20px;
-}
+.project-card h3{ font-size:20px; }
+.project-card p{ color:var(--gray); line-height:1.6; font-size:15px; }
+.project-card span{ color:var(--primary); font-weight:600; font-size:15px; }
+.project-card:hover{ transform:translateY(-8px); box-shadow:0 20px 45px rgba(0,0,0,.1); }
 
-.project-card p{
-  color:var(--gray);
-  line-height:1.6;
-  font-size:15px;
-}
-
-.project-card span{
-  color:var(--primary);
-  font-weight:600;
-  font-size:15px;
-}
-
-.project-card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 20px 45px rgba(0,0,0,.1);
-}
-
-/* CONTACT */
-#contact h2{
-  margin-bottom:30px;
-  font-size:clamp(28px,4vw,42px);
-}
+#contact h2{ margin-bottom:30px; font-size:clamp(28px,4vw,42px); }
 
 .contact-wrapper{
   display:grid;
@@ -288,12 +231,7 @@ section{
   align-items:start;
 }
 
-.contact-info p{
-  margin-top:15px;
-  color:#475569;
-  font-size:16px;
-  line-height:1.8;
-}
+.contact-info p{ margin-top:15px; color:#475569; font-size:16px; line-height:1.8; }
 
 form{
   background:white;
@@ -336,7 +274,6 @@ button:hover{
   box-shadow:0 10px 25px rgba(255,159,28,.3);
 }
 
-/* FOOTER */
 footer{
   text-align:center;
   padding:25px;
@@ -344,134 +281,592 @@ footer{
   font-size:14px;
 }
 
-/* RESPONSIVE */
 @media(max-width:900px){
-  .hero{
-    grid-template-columns:1fr;
-    text-align:center;
-    gap:40px;
-  }
-  
-  .hero-image{
-    order:-1;
-  }
-  
-  .profile-pic{
-    max-width:280px;
-  }
-  
-  .hero-content p{
-    margin:18px auto 0;
-  }
-  
-  .hero-btns{
-    justify-content:center;
-  }
-  
-  .contact-wrapper{
-    grid-template-columns:1fr;
-  }
-  
-  .projects-grid{
-    grid-template-columns:1fr;
-  }
-  
-  nav{
-    bottom:15px;
-    padding:10px 16px;
-    gap:4px;
-  }
-  
-  nav a{
-    padding:8px 12px;
-    font-size:10px;
-  }
-  
-  nav a i{
-    font-size:18px;
-  }
+  .hero{ grid-template-columns:1fr; text-align:center; gap:40px; }
+  .hero-image{ order:-1; }
+  .profile-pic{ max-width:280px; }
+  .hero-content p{ margin:18px auto 0; }
+  .hero-btns{ justify-content:center; }
+  .contact-wrapper{ grid-template-columns:1fr; }
+  .projects-grid{ grid-template-columns:1fr; }
+  nav{ bottom:15px; padding:10px 16px; gap:4px; }
+  nav a{ padding:8px 12px; font-size:10px; }
+  nav a i{ font-size:18px; }
 }
 
 @media(max-width:500px){
-  section{
-    padding:60px 5% 60px;
-  }
-  
-  nav{
-    bottom:10px;
-    padding:8px 12px;
-    gap:2px;
-  }
-  
-  nav a{
-    padding:8px 10px;
-    gap:2px;
-  }
-  
-  nav a span{
-    display:none;
-  }
-  
-  .profile-pic{
-    max-width:220px;
-  }
+  section{ padding:60px 5% 60px; }
+  nav{ bottom:10px; padding:8px 12px; gap:2px; }
+  nav a{ padding:8px 10px; gap:2px; }
+  nav a span{ display:none; }
+  .profile-pic{ max-width:220px; }
 }
+
+
+/* ======================================================
+   BIRTHDAY SCRATCH CARD — OVERLAY SYSTEM
+   ====================================================== */
+
+.bday-overlay{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  background:radial-gradient(ellipse at center, #1a0a2e 0%, #0d0518 100%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  transition:opacity 0.6s ease, visibility 0.6s;
+}
+
+.bday-overlay.hidden{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+
+.bday-overlay::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle 2px at 10% 20%, rgba(255,159,28,.4) 0%, transparent 100%),
+    radial-gradient(circle 3px at 85% 15%, rgba(255,90,120,.35) 0%, transparent 100%),
+    radial-gradient(circle 2px at 50% 80%, rgba(100,200,255,.3) 0%, transparent 100%),
+    radial-gradient(circle 1.5px at 25% 70%, rgba(255,200,50,.4) 0%, transparent 100%),
+    radial-gradient(circle 2.5px at 75% 60%, rgba(180,100,255,.3) 0%, transparent 100%),
+    radial-gradient(circle 2px at 90% 75%, rgba(255,159,28,.3) 0%, transparent 100%),
+    radial-gradient(circle 1px at 15% 50%, rgba(255,255,255,.2) 0%, transparent 100%);
+  animation: floatDots 12s ease-in-out infinite alternate;
+  pointer-events:none;
+}
+
+@keyframes floatDots{
+  0%{ transform: translateY(0) scale(1); }
+  100%{ transform: translateY(-30px) scale(1.05); }
+}
+
+.bday-step{
+  display:none;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  padding:0 20px;
+  animation: stepIn 0.5s cubic-bezier(.34,1.56,.64,1) both;
+  position:relative;
+  z-index:2;
+}
+
+.bday-step.active{ display:flex; }
+
+@keyframes stepIn{
+  0%{ opacity:0; transform:translateY(40px) scale(0.92); }
+  100%{ opacity:1; transform:translateY(0) scale(1); }
+}
+
+/* STEP 0 : SCRATCH CARD */
+.scratch-card-wrap{
+  position:relative;
+  width:min(380px, 90vw);
+}
+
+.scratch-card-wrap::before{
+  content:'';
+  position:absolute;
+  inset:-3px;
+  border-radius:24px;
+  background:linear-gradient(135deg, #ffcc00, #ff9f1c, #ff6b6b, #ffcc00);
+  background-size:200% 200%;
+  animation:borderShine 3s ease infinite;
+  z-index:0;
+}
+
+@keyframes borderShine{
+  0%{ background-position:0% 50%; }
+  50%{ background-position:100% 50%; }
+  100%{ background-position:0% 50%; }
+}
+
+.scratch-card{
+  position:relative;
+  z-index:1;
+  background:linear-gradient(145deg, #1e1040, #2a1550);
+  border-radius:22px;
+  overflow:hidden;
+  padding:32px 28px 28px;
+}
+
+.scratch-card .card-top-label{
+  font-family:'Fredoka', cursive;
+  color:#ffcc00;
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  margin-bottom:14px;
+  opacity:.8;
+}
+
+.scratch-card .card-title{
+  font-family:'Fredoka', cursive;
+  color:#fff;
+  font-size:clamp(20px,5vw,26px);
+  font-weight:600;
+  margin-bottom:6px;
+  line-height:1.3;
+}
+
+.scratch-card .card-sub{
+  color:rgba(255,255,255,.45);
+  font-size:13px;
+  margin-bottom:22px;
+  font-weight:400;
+}
+
+.scratch-area{
+  position:relative;
+  width:100%;
+  height:160px;
+  border-radius:16px;
+  overflow:hidden;
+  cursor:crosshair;
+  user-select:none;
+  -webkit-user-select:none;
+}
+
+.scratch-area canvas{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  border-radius:16px;
+  touch-action:none;
+}
+
+.scratch-reward{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg, #fff8e1, #fff3cd);
+  border-radius:16px;
+  pointer-events:none;
+  z-index:0;
+}
+
+.scratch-reward .reward-emoji{
+  font-size:44px;
+  margin-bottom:4px;
+  animation:pop 0.4s cubic-bezier(.34,1.56,.64,1) both;
+  animation-play-state:paused;
+}
+
+.scratch-reward.revealed .reward-emoji{ animation-play-state:running; }
+
+.scratch-reward .reward-text{
+  font-family:'Fredoka', cursive;
+  font-size:22px;
+  font-weight:700;
+  color:#e65100;
+  line-height:1.3;
+}
+
+@keyframes pop{
+  0%{ transform:scale(0); opacity:0; }
+  100%{ transform:scale(1); opacity:1; }
+}
+
+.scratch-hint{
+  margin-top:16px;
+  color:rgba(255,255,255,.5);
+  font-size:12px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.scratch-hint .hint-bar-bg{
+  flex:1;
+  height:4px;
+  background:rgba(255,255,255,.15);
+  border-radius:2px;
+  overflow:hidden;
+}
+
+.scratch-hint .hint-bar{
+  height:100%;
+  width:0%;
+  background:linear-gradient(90deg, #ff9f1c, #ffcc00);
+  border-radius:2px;
+  transition:width 0.2s;
+}
+
+/* STEP 1 : CODE INPUT */
+.code-box{
+  background:linear-gradient(145deg, #1e1040, #2a1550);
+  border-radius:24px;
+  padding:36px 32px 32px;
+  width:min(380px, 90vw);
+  position:relative;
+  overflow:hidden;
+}
+
+.code-box::before{
+  content:'';
+  position:absolute;
+  top:-50%; left:-50%;
+  width:200%; height:200%;
+  background:conic-gradient(from 0deg, transparent 0%, rgba(255,159,28,.08) 50%, transparent 100%);
+  animation:spinGlow 8s linear infinite;
+  pointer-events:none;
+}
+
+@keyframes spinGlow{
+  to{ transform:rotate(360deg); }
+}
+
+.code-box .cb-emoji{ font-size:50px; margin-bottom:10px; position:relative; z-index:1; }
+.code-box .cb-title{
+  font-family:'Fredoka', cursive;
+  color:#fff;
+  font-size:22px;
+  font-weight:600;
+  margin-bottom:6px;
+  position:relative; z-index:1;
+}
+.code-box .cb-sub{
+  color:rgba(255,255,255,.45);
+  font-size:13px;
+  margin-bottom:22px;
+  position:relative; z-index:1;
+}
+
+.code-input-wrap{
+  position:relative; z-index:1;
+  display:flex;
+  gap:10px;
+}
+
+.code-input-wrap input{
+  flex:1;
+  padding:14px 18px;
+  border-radius:14px;
+  border:2px solid rgba(255,255,255,.15);
+  background:rgba(255,255,255,.06);
+  color:#fff;
+  font-family:'Fredoka', cursive;
+  font-size:18px;
+  font-weight:600;
+  letter-spacing:3px;
+  outline:none;
+  transition:border-color 0.3s;
+  margin-top:0 !important;
+}
+
+.code-input-wrap input::placeholder{ color:rgba(255,255,255,.25); letter-spacing:2px; }
+.code-input-wrap input:focus{ border-color:#ff9f1c; }
+
+.code-input-wrap button{
+  margin-top:0 !important;
+  width:auto;
+  padding:14px 22px;
+  border-radius:14px;
+  font-size:15px;
+  font-family:'Inter',sans-serif;
+  white-space:nowrap;
+}
+
+.code-error{
+  margin-top:12px;
+  color:#ff6b6b;
+  font-size:13px;
+  min-height:18px;
+  position:relative; z-index:1;
+  opacity:0;
+  transition:opacity 0.3s;
+}
+.code-error.show{ opacity:1; }
+
+/* STEP 2 : CONGRATS + UPI */
+.upi-box{
+  background:linear-gradient(145deg, #1e1040, #2a1550);
+  border-radius:24px;
+  padding:36px 32px 32px;
+  width:min(380px, 90vw);
+  position:relative;
+  overflow:hidden;
+}
+
+.upi-box::before{
+  content:'';
+  position:absolute;
+  top:-50%; left:-50%;
+  width:200%; height:200%;
+  background:conic-gradient(from 0deg, transparent 0%, rgba(100,200,80,.08) 50%, transparent 100%);
+  animation:spinGlow 8s linear infinite;
+  pointer-events:none;
+}
+
+.upi-box .ub-emoji{ font-size:56px; margin-bottom:8px; position:relative; z-index:1; }
+.upi-box .ub-title{
+  font-family:'Fredoka', cursive;
+  color:#fff;
+  font-size:24px;
+  font-weight:700;
+  position:relative; z-index:1;
+  margin-bottom:4px;
+}
+.upi-box .ub-amount{
+  font-family:'Fredoka', cursive;
+  color:#7cfc00;
+  font-size:40px;
+  font-weight:700;
+  position:relative; z-index:1;
+  margin:6px 0;
+  text-shadow:0 0 20px rgba(124,252,0,.3);
+}
+.upi-box .ub-sub{
+  color:rgba(255,255,255,.45);
+  font-size:13px;
+  margin-bottom:22px;
+  position:relative; z-index:1;
+}
+
+.upi-input-wrap{ position:relative; z-index:1; }
+
+.upi-input-wrap input{
+  width:100%;
+  padding:14px 18px;
+  border-radius:14px;
+  border:2px solid rgba(255,255,255,.15);
+  background:rgba(255,255,255,.06);
+  color:#fff;
+  font-size:15px;
+  font-family:'Inter',sans-serif;
+  outline:none;
+  transition:border-color 0.3s;
+  margin-top:0 !important;
+}
+
+.upi-input-wrap input::placeholder{ color:rgba(255,255,255,.3); }
+.upi-input-wrap input:focus{ border-color:#7cfc00; }
+
+.upi-input-wrap button{
+  margin-top:14px !important;
+  background:linear-gradient(135deg, #7cfc00, #32cd32);
+  color:#0d0518;
+  font-weight:700;
+  font-size:15px;
+}
+
+.upi-input-wrap button:hover{
+  box-shadow:0 8px 24px rgba(124,252,0,.35) !important;
+}
+
+.upi-error{
+  margin-top:10px;
+  color:#ff6b6b;
+  font-size:13px;
+  min-height:18px;
+  opacity:0;
+  transition:opacity 0.3s;
+}
+.upi-error.show{ opacity:1; }
+
+/* STEP 3 : THANK YOU */
+.thankyou-box{
+  background:linear-gradient(145deg, #1e1040, #2a1550);
+  border-radius:24px;
+  padding:48px 32px 40px;
+  width:min(380px, 90vw);
+  position:relative;
+  overflow:hidden;
+}
+
+.thankyou-box::before{
+  content:'';
+  position:absolute;
+  top:-50%; left:-50%;
+  width:200%; height:200%;
+  background:conic-gradient(from 0deg, transparent 0%, rgba(255,159,28,.1) 50%, transparent 100%);
+  animation:spinGlow 8s linear infinite;
+  pointer-events:none;
+}
+
+.thankyou-box .ty-emoji{ font-size:64px; margin-bottom:12px; position:relative; z-index:1; }
+.thankyou-box .ty-title{
+  font-family:'Fredoka', cursive;
+  color:#fff;
+  font-size:26px;
+  font-weight:700;
+  position:relative; z-index:1;
+  margin-bottom:8px;
+}
+.thankyou-box .ty-sub{
+  color:rgba(255,255,255,.5);
+  font-size:14px;
+  line-height:1.6;
+  max-width:280px;
+  margin:0 auto;
+  position:relative; z-index:1;
+}
+
+.close-overlay-btn{
+  margin-top:24px;
+  position:relative; z-index:1;
+  display:inline-block;
+  padding:12px 32px;
+  border-radius:30px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.2);
+  color:rgba(255,255,255,.7);
+  font-size:14px;
+  cursor:pointer;
+  transition:all 0.3s;
+}
+
+.close-overlay-btn:hover{
+  background:rgba(255,255,255,.15);
+  color:#fff;
+  transform:none;
+  box-shadow:none;
+}
+
+#confetti-canvas{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:9998;
+  display:none;
+}
+
+.sparkle{
+  position:absolute;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#ffcc00;
+  pointer-events:none;
+  animation:sparkleOut 0.6s ease-out forwards;
+  z-index:5;
+}
+
+@keyframes sparkleOut{
+  0%{ transform:scale(1); opacity:1; }
+  100%{ transform:scale(0) translateY(-12px); opacity:0; }
+}
+
+.spinner{
+  width:24px; height:24px;
+  border:3px solid rgba(255,255,255,.2);
+  border-top-color:#7cfc00;
+  border-radius:50%;
+  animation:spin 0.6s linear infinite;
+  margin:0 auto;
+}
+@keyframes spin{ to{ transform:rotate(360deg); } }
 </style>
 </head>
 
 <body>
 
-<!-- FLOATING BOTTOM NAVBAR -->
+<div class="bday-overlay" id="bdayOverlay">
+
+  <!-- STEP 0: Scratch Card -->
+  <div class="bday-step active" id="step-scratch">
+    <div class="scratch-card-wrap">
+      <div class="scratch-card">
+        <div class="card-top-label">🎂 Special Surprise for You</div>
+        <div class="card-title">Scratch below to reveal<br>your birthday gift!</div>
+        <div class="card-sub">Use your finger or mouse to scratch</div>
+
+        <div class="scratch-area" id="scratchArea">
+          <div class="scratch-reward" id="scratchReward">
+            <div class="reward-emoji">🎉</div>
+            <div class="reward-text">Happy Birthday<br>Anup Bhai! 🎂</div>
+          </div>
+          <canvas id="scratchCanvas"></canvas>
+        </div>
+
+        <div class="scratch-hint">
+          <span>Progress:</span>
+          <div class="hint-bar-bg"><div class="hint-bar" id="hintBar"></div></div>
+          <span id="hintPercent">0%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 1: Enter Code -->
+  <div class="bday-step" id="step-code">
+    <div class="code-box">
+      <div class="cb-emoji">🎁</div>
+      <div class="cb-title">You got a special code!</div>
+      <div class="cb-sub">Enter the code below to claim your reward</div>
+      <div class="code-input-wrap">
+        <input type="text" id="codeInput" placeholder="ENTER CODE" maxlength="8" autocomplete="off" spellcheck="false">
+        <button id="codeSubmitBtn">Go</button>
+      </div>
+      <div class="code-error" id="codeError">❌ Wrong code! Try again.</div>
+    </div>
+  </div>
+
+  <!-- STEP 2: Congrats + UPI -->
+  <div class="bday-step" id="step-upi">
+    <div class="upi-box">
+      <div class="ub-emoji">🎊</div>
+      <div class="ub-title">Congratulations!</div>
+      <div class="ub-amount">₹10</div>
+      <div class="ub-sub">You won ₹10! Enter your UPI ID to claim.</div>
+      <div class="upi-input-wrap">
+        <input type="text" id="upiInput" placeholder="e.g. anup@upi" autocomplete="off">
+        <button id="upiSubmitBtn">Claim Now</button>
+        <div class="upi-error" id="upiError">Please enter a valid UPI ID</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 3: Thank You -->
+  <div class="bday-step" id="step-thankyou">
+    <div class="thankyou-box">
+      <div class="ty-emoji">🥳</div>
+      <div class="ty-title">Happy Birthday, Anup Bhai!</div>
+      <div class="ty-sub">Your UPI has been saved. The ₹10 will be sent to you soon.<br><br>Now enjoy the portfolio! 🎉</div>
+      <button class="close-overlay-btn" id="closeBdayBtn">View Portfolio →</button>
+    </div>
+  </div>
+</div>
+
+<canvas id="confetti-canvas"></canvas>
+
+<!-- ORIGINAL PORTFOLIO HTML -->
 <nav>
-  <a href="#home" class="nav-link active">
-    <i class="fas fa-home"></i>
-    <span>Home</span>
-  </a>
-  <a href="#about" class="nav-link">
-    <i class="fas fa-user"></i>
-    <span>About</span>
-  </a>
-  <a href="#skills" class="nav-link">
-    <i class="fas fa-code"></i>
-    <span>Skills</span>
-  </a>
-  <a href="#projects" class="nav-link">
-    <i class="fas fa-folder-open"></i>
-    <span>Projects</span>
-  </a>
-  <a href="#contact" class="nav-link">
-    <i class="fas fa-envelope"></i>
-    <span>Contact</span>
-  </a>
+  <a href="#home" class="nav-link active"><i class="fas fa-home"></i><span>Home</span></a>
+  <a href="#about" class="nav-link"><i class="fas fa-user"></i><span>About</span></a>
+  <a href="#skills" class="nav-link"><i class="fas fa-code"></i><span>Skills</span></a>
+  <a href="#projects" class="nav-link"><i class="fas fa-folder-open"></i><span>Projects</span></a>
+  <a href="#contact" class="nav-link"><i class="fas fa-envelope"></i><span>Contact</span></a>
 </nav>
 
 <section class="hero" id="home">
   <div class="hero-content">
     <h2>Hi, I'm <span>Harsh Vadgave</span></h2>
-    <p>
-      A frontend developer & student who loves building clean, useful and responsive
-      web experiences using HTML, CSS and JavaScript.
-    </p>
+    <p>A frontend developer & student who loves building clean, useful and responsive web experiences using HTML, CSS and JavaScript.</p>
     <div class="hero-btns">
       <a href="#contact" class="btn">Hire Me</a>
       <a href="#projects" class="btn outline">My Work</a>
     </div>
   </div>
-  
   <div class="hero-image">
-   
     <img src="profile.jpeg" alt="Harsh Vadgave" class="profile-pic">
-  
   </div>
 </section>
 
 <section class="about" id="about">
   <h2>About Me</h2>
-  <p>
-    I'm passionate about creating fast, responsive and user-friendly websites.
-    I focus on simplicity, performance and real-world usefulness.
-    I enjoy building tools, landing pages and frontend systems without unnecessary complexity.
-  </p>
+  <p>I'm passionate about creating fast, responsive and user-friendly websites. I focus on simplicity, performance and real-world usefulness. I enjoy building tools, landing pages and frontend systems without unnecessary complexity.</p>
 </section>
 
 <section id="skills">
@@ -494,19 +889,16 @@ footer{
       <p>All about me and My work.</p>
       <span>View Project →</span>
     </a>
-
     <a class="project-card" href="https://harshvadgave.github.io/E-Priscription/" target="_blank">
       <h3>E-Prescription</h3>
       <p>E-Prescription Web App: Create professional, patient-friendly prescriptions online with PDF download, auto-filled doctor & clinic details, and a manual signature area.</p>
       <span>View Project →</span>
     </a>
-
     <a class="project-card" href="https://harshvadgave.github.io/Form/" target="_blank">
       <h3>Form to Google Sheets</h3>
       <p>Just a form of Real Estate Agent, through google sheet I can get the form data in spreadsheet.</p>
       <span>View Project →</span>
     </a>
-
     <a class="project-card" href="https://harshvadgave.github.io/cypher-game/" target="_blank">
       <h3>Cypher Decoding Game</h3>
       <p>A fast-paced decoding game that tests your logic, not your guessing. Crack the code by decoding every character correctly.</p>
@@ -523,7 +915,6 @@ footer{
       <p><strong>Email:</strong> harshvadgave169969@gmail.com</p>
       <p><strong>WhatsApp:</strong> 7841811323</p>
     </div>
-
     <form id="contactForm">
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="email" name="email" placeholder="Your Email" required>
@@ -533,46 +924,363 @@ footer{
   </div>
 </section>
 
-<footer>
-  © 2026 Harsh Vadgave • Built with ❤️
-</footer>
+<footer>© 2026 Harsh Vadgave • Built with ❤️</footer>
+
 
 <script>
-// Contact form submission
-const scriptURL = "https://script.google.com/macros/s/AKfycbwrQYvr3WeE0cbKmAYToR3aOkcUZMkOJl1-7LC6LLsIPFP1wzoFcvMRJabpkDvP8Pvowg/exec";
-const form = document.getElementById("contactForm");
+// ============================================================
+// 1. SCRATCH CARD ENGINE
+//    Trigger reveal after just a few strokes — doesn't need
+//    full scratch. Uses a stroke counter: after 5 scratch
+//    events it auto-reveals with a smooth wipe animation.
+// ============================================================
+(function(){
+  const area      = document.getElementById('scratchArea');
+  const canvas    = document.getElementById('scratchCanvas');
+  const ctx       = canvas.getContext('2d');
+  const reward    = document.getElementById('scratchReward');
+  const hintBar   = document.getElementById('hintBar');
+  const hintPct   = document.getElementById('hintPercent');
 
-form.addEventListener("submit", e => {
-  e.preventDefault();
-  fetch(scriptURL, { method: "POST", body: new FormData(form)})
-    .then(() => {
-      alert("Message sent successfully!");
-      form.reset();
-    })
-    .catch(() => alert("Something went wrong"));
-});
+  let isDrawing  = false;
+  let revealed   = false;
+  let scratchCount = 0;       // counts individual scratch moves
+  const REVEAL_AFTER = 8;     // reveal after this many scratch moves
 
-// Active nav link on scroll
-const sections = document.querySelectorAll('section');
-const navLinks = document.querySelectorAll('.nav-link');
+  function init(){
+    const rect = area.getBoundingClientRect();
+    canvas.width  = rect.width;
+    canvas.height = rect.height;
 
-window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop;
-    const sectionHeight = section.clientHeight;
-    if (scrollY >= (sectionTop - 200)) {
-      current = section.getAttribute('id');
+    // Gold gradient base
+    const grad = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+    grad.addColorStop(0,   '#b8860b');
+    grad.addColorStop(0.3, '#daa520');
+    grad.addColorStop(0.5, '#ffd700');
+    grad.addColorStop(0.7, '#daa520');
+    grad.addColorStop(1,   '#b8860b');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // Grid pattern
+    ctx.strokeStyle = 'rgba(0,0,0,0.06)';
+    ctx.lineWidth = 1;
+    for(let x = 0; x < canvas.width; x += 18){
+      ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x, canvas.height); ctx.stroke();
     }
+    for(let y = 0; y < canvas.height; y += 18){
+      ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(canvas.width, y); ctx.stroke();
+    }
+
+    // Watermark text
+    ctx.fillStyle = 'rgba(139,90,0,0.18)';
+    ctx.font = 'bold 11px Inter, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('✦ SCRATCH HERE ✦', canvas.width/2, canvas.height/2 - 4);
+    ctx.fillText('Use finger or mouse', canvas.width/2, canvas.height/2 + 14);
+  }
+
+  function getPos(e){
+    const rect = canvas.getBoundingClientRect();
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+    if(e.touches){
+      return {
+        x: (e.touches[0].clientX - rect.left) * scaleX,
+        y: (e.touches[0].clientY - rect.top)  * scaleY
+      };
+    }
+    return {
+      x: (e.clientX - rect.left) * scaleX,
+      y: (e.clientY - rect.top)  * scaleY
+    };
+  }
+
+  // Animated wipe: erases the canvas from left to right over ~600ms
+  function animateWipe(){
+    const duration = 600;
+    const start    = performance.now();
+
+    function step(now){
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      // ease-out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+
+      // Clear everything up to current wipe position
+      const wipeX = eased * (canvas.width + 60);
+      ctx.clearRect(0, 0, wipeX, canvas.height);
+
+      // Update progress bar to match wipe
+      const barPct = Math.round(eased * 100);
+      hintBar.style.width = barPct + '%';
+      hintPct.textContent  = barPct + '%';
+
+      if(progress < 1){
+        requestAnimationFrame(step);
+      } else {
+        // Wipe done — fully clear & show reward
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        hintBar.style.width = '100%';
+        hintPct.textContent  = '100%';
+        reward.classList.add('revealed');
+
+        // Go to code step after a beat
+        setTimeout(()=> goToStep('step-code'), 1000);
+      }
+    }
+    requestAnimationFrame(step);
+  }
+
+  function scratch(e){
+    e.preventDefault();
+    if(revealed) return;
+    const pos = getPos(e);
+
+    // Erase circle at touch/mouse point
+    ctx.globalCompositeOperation = 'destination-out';
+    ctx.beginPath();
+    ctx.arc(pos.x, pos.y, 28, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.globalCompositeOperation = 'source-over';
+
+    spawnSparkle(e);
+
+    // Count and check threshold
+    scratchCount++;
+    // Animate progress bar up to ~40% while scratching (feels responsive)
+    const fakePercent = Math.min(Math.round((scratchCount / REVEAL_AFTER) * 40), 40);
+    hintBar.style.width = fakePercent + '%';
+    hintPct.textContent  = fakePercent + '%';
+
+    if(scratchCount >= REVEAL_AFTER && !revealed){
+      revealed = true;
+      animateWipe(); // smooth reveal wipe
+    }
+  }
+
+  function spawnSparkle(e){
+    const rect = area.getBoundingClientRect();
+    const s = document.createElement('div');
+    s.className = 'sparkle';
+    s.style.left = (e.clientX || (e.touches&&e.touches[0].clientX) || 0) - rect.left + 'px';
+    s.style.top  = (e.clientY || (e.touches&&e.touches[0].clientY) || 0) - rect.top  + 'px';
+    area.appendChild(s);
+    setTimeout(()=> s.remove(), 620);
+  }
+
+  // Event bindings
+  canvas.addEventListener('mousedown',  (e)=>{ isDrawing=true; scratch(e); });
+  canvas.addEventListener('mousemove',  (e)=>{ if(isDrawing) scratch(e); });
+  canvas.addEventListener('mouseup',    ()=>{ isDrawing=false; });
+  canvas.addEventListener('mouseleave', ()=>{ isDrawing=false; });
+
+  canvas.addEventListener('touchstart', (e)=>{ isDrawing=true; scratch(e); }, {passive:false});
+  canvas.addEventListener('touchmove',  (e)=>{ if(isDrawing) scratch(e); }, {passive:false});
+  canvas.addEventListener('touchend',   ()=>{ isDrawing=false; });
+
+  window.addEventListener('load', init);
+  window.addEventListener('resize', ()=>{ if(!revealed) init(); });
+})();
+
+
+// ============================================================
+// 2. STEP NAVIGATION
+// ============================================================
+function goToStep(stepId){
+  document.querySelectorAll('.bday-step').forEach(s => s.classList.remove('active'));
+  document.getElementById(stepId).classList.add('active');
+}
+
+
+// ============================================================
+// 3. CODE INPUT — uppercase only, validates "ANUPBETA"
+// ============================================================
+(function(){
+  const input  = document.getElementById('codeInput');
+  const btn    = document.getElementById('codeSubmitBtn');
+  const errDiv = document.getElementById('codeError');
+  const SECRET = 'ANUPBETA';
+
+  input.addEventListener('input', ()=>{
+    const sel = input.selectionStart;
+    input.value = input.value.toUpperCase();
+    input.setSelectionRange(sel, sel);
   });
 
-  navLinks.forEach(link => {
-    link.classList.remove('active');
-    if (link.getAttribute('href') === `#${current}`) {
-      link.classList.add('active');
+  btn.addEventListener('click', validate);
+  input.addEventListener('keydown', (e)=>{ if(e.key==='Enter') validate(); });
+
+  function validate(){
+    errDiv.classList.remove('show');
+    if(input.value.trim() === SECRET){
+      fireConfetti();
+      setTimeout(()=> goToStep('step-upi'), 800);
+    } else {
+      errDiv.classList.add('show');
+      input.value = '';
+      input.focus();
     }
-  });
+  }
+})();
+
+
+// ============================================================
+// 4. UPI SUBMISSION → Google Sheets
+// ============================================================
+(function(){
+  const SHEET_URL = "https://script.google.com/macros/s/AKfycby21VePV29y2cwn8kBhLYxjYltYbE7Fey8u2sKbfMMfi3xejELWfzcKGXGYkV8WLGkN/exec";
+
+  const input  = document.getElementById('upiInput');
+  const btn    = document.getElementById('upiSubmitBtn');
+  const errDiv = document.getElementById('upiError');
+
+  btn.addEventListener('click', submit);
+  input.addEventListener('keydown', (e)=>{ if(e.key==='Enter') submit(); });
+
+  async function submit(){
+    errDiv.classList.remove('show');
+    const upi = input.value.trim();
+
+    if(!upi || !upi.includes('@') || upi.indexOf('@') < 1 || upi.indexOf('@') === upi.length-1){
+      errDiv.classList.add('show');
+      return;
+    }
+
+    btn.innerHTML = '<div class="spinner"></div>';
+    btn.disabled  = true;
+    input.disabled = true;
+
+    try {
+      const formData = new FormData();
+      formData.append('upi', upi);
+      formData.append('timestamp', new Date().toLocaleString());
+      formData.append('name', 'Anup');
+
+      await fetch(SHEET_URL, { method:'POST', body: formData });
+      fireConfetti();
+      setTimeout(()=> goToStep('step-thankyou'), 600);
+    } catch(err){
+      // Apps Script POST returns opaque response — still works
+      fireConfetti();
+      setTimeout(()=> goToStep('step-thankyou'), 600);
+    }
+  }
+})();
+
+
+// ============================================================
+// 5. CLOSE OVERLAY
+// ============================================================
+document.getElementById('closeBdayBtn').addEventListener('click', ()=>{
+  document.getElementById('bdayOverlay').classList.add('hidden');
 });
+
+
+// ============================================================
+// 6. CONFETTI ENGINE
+// ============================================================
+(function(){
+  const canvas  = document.getElementById('confetti-canvas');
+  const ctx     = canvas.getContext('2d');
+  let particles = [];
+  let animId    = null;
+
+  function resize(){
+    canvas.width  = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  const COLORS = ['#ff9f1c','#ffcc00','#ff6b6b','#7cfc00','#64c8ff','#e040fb','#fff'];
+
+  class Particle {
+    constructor(){ this.reset(); }
+    reset(){
+      this.x = window.innerWidth / 2 + (Math.random()-0.5)*200;
+      this.y = window.innerHeight / 2;
+      this.vx = (Math.random()-0.5) * 14;
+      this.vy = -(Math.random()*12 + 4);
+      this.gravity = 0.18;
+      this.color = COLORS[Math.floor(Math.random()*COLORS.length)];
+      this.size = Math.random()*6 + 3;
+      this.life = 1;
+      this.decay = Math.random()*0.012 + 0.008;
+      this.rotation = Math.random()*Math.PI*2;
+      this.rotSpeed = (Math.random()-0.5)*0.2;
+      this.isRect = Math.random() > 0.5;
+    }
+    update(){
+      this.x += this.vx;
+      this.y += this.vy;
+      this.vy += this.gravity;
+      this.vx *= 0.99;
+      this.life -= this.decay;
+      this.rotation += this.rotSpeed;
+    }
+    draw(){
+      ctx.save();
+      ctx.globalAlpha = this.life;
+      ctx.fillStyle = this.color;
+      ctx.translate(this.x, this.y);
+      ctx.rotate(this.rotation);
+      if(this.isRect){
+        ctx.fillRect(-this.size/2, -this.size*1.2, this.size, this.size*2.4);
+      } else {
+        ctx.beginPath();
+        ctx.arc(0, 0, this.size/2, 0, Math.PI*2);
+        ctx.fill();
+      }
+      ctx.restore();
+    }
+  }
+
+  function loop(){
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles = particles.filter(p => p.life > 0);
+    particles.forEach(p =>{ p.update(); p.draw(); });
+    if(particles.length > 0) animId = requestAnimationFrame(loop);
+    else { canvas.style.display='none'; }
+  }
+
+  window.fireConfetti = function(){
+    canvas.style.display = 'block';
+    for(let i = 0; i < 120; i++) particles.push(new Particle());
+    if(animId) cancelAnimationFrame(animId);
+    loop();
+  };
+})();
+
+
+// ============================================================
+// 7. ORIGINAL PORTFOLIO: contact form + nav scroll
+// ============================================================
+(function(){
+  const scriptURL = "https://script.google.com/macros/s/AKfycbwrQYvr3WeE0cbKmAYToR3aOkcUZMkOJl1-7LC6LLsIPFP1wzoFcvMRJabpkDvP8Pvowg/exec";
+  const form = document.getElementById("contactForm");
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    fetch(scriptURL, { method:"POST", body: new FormData(form) })
+      .then(()=>{ alert("Message sent successfully!"); form.reset(); })
+      .catch(()=> alert("Something went wrong"));
+  });
+})();
+
+(function(){
+  const sections  = document.querySelectorAll('section');
+  const navLinks  = document.querySelectorAll('.nav-link');
+  window.addEventListener('scroll', ()=>{
+    let current = '';
+    sections.forEach(section => {
+      if(scrollY >= section.offsetTop - 200) current = section.getAttribute('id');
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if(link.getAttribute('href') === `#${current}`) link.classList.add('active');
+    });
+  });
+})();
 </script>
 
 </body>
