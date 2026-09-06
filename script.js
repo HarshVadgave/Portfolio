@@ -39,7 +39,7 @@
 
 
 // 4. Contact form submission to Google Sheets
-const scriptURL = "https://script.google.com/macros/s/AKfycbzaJkv_MyNMp_vdb5Oz5jShNJF7t-c_RvBh8lNlJYN4CLOnhzcDcyxyVwkkp1jouugp/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbxPDri6Fqr36aP11Rvppoxli3UwfPFliEHh97lds9WtetLtTZpUSVZpsL8j0YUWu9Wn/exec";
 const form = document.getElementById("contactForm");
 const submitBtn = document.getElementById("submitBtn");
 const statusDiv = document.getElementById("formStatus");
