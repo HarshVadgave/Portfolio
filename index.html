@@ -3,18 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Harsh Vadgave — Web Developer</title>
+  <title>Harsh Vadgave — Web Developer & Graphic Designer</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <meta name="description" content="Harsh Vadgave – Frontend developer portfolio showcasing responsive websites, projects, and contact form built using HTML, CSS, and JavaScript.">
-  <meta name="keywords" content="Harsh Vadgave, frontend developer, portfolio, HTML CSS JavaScript, web developer">
+  <meta name="description" content="Harsh Vadgave – Web developer portfolio featuring responsive applications, high-performance web solutions, and neo-brutalist graphic design.">
+  <meta name="keywords" content="Harsh Vadgave, frontend developer, neo-brutalist portfolio, HTML CSS JavaScript, web developer">
   <meta name="google-site-verification" content="FonUvCHA_Q2y08HlwY9KdrZRwSpHVlFm3bktwMlGCTk" />
   <meta name="author" content="Harsh Vadgave">
   
   <link rel="icon" type="image/png" href="images/favicon-32.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -23,18 +22,23 @@
   <!-- ─── NAV ─────────────────────────────────────────────── -->
   <nav>
     <div class="nav-inner">
-    
-      <a href="#hero" class="nav-logo">
+      <a href="#hero" class="nav-logo" target="_blank" rel="noopener noreferrer">
         <picture>
           <source type="image/webp" srcset="images/logo-120.webp">
           <img src="images/logo.png" alt="Logo" class="nav-logo-img" width="40" height="40" fetchpriority="high" decoding="async">
         </picture>harshvadgave<span>.</span>fun
       </a>
-      <ul class="nav-links">
-        <li><a href="#work">Work</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="#work" target="_blank" rel="noopener noreferrer">01. Work</a></li>
+          <li><a href="#about" target="_blank" rel="noopener noreferrer">02. About</a></li>
+          <li><a href="#contact" target="_blank" rel="noopener noreferrer">03. Contact</a></li>
+        </ul>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle Light and Dark Mode" title="Toggle Theme">
+          <svg class="sun-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="moon-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
     </div>
   </nav>
 
@@ -44,52 +48,53 @@
       <div class="hero-text">
         <div class="hero-status">
           <span class="dot"></span>
-          available for work &nbsp;·&nbsp; web developer
+          AVAILABLE FOR WORK &nbsp;·&nbsp; WEB DEVELOPER
         </div>
 
         <h1 class="hero-h1">
           I build<br>
-          <span class="accent">fast</span> things<br>
+          <span class="accent">fast</span> <span class="accent-pink">things</span><br>
           for the web.
         </h1>
 
         <p class="hero-body">
-          I focus on clean code, snappy interfaces, and experiences that feel
-          considered — not just completed. Based wherever the Chai is good.
+          I focus on <strong>clean code</strong>, snappy high-performance interfaces, and digital experiences that feel considered — not just completed. Based wherever the Chai is good.
         </p>
 
         <div class="hero-btns">
-          <a href="#work" class="btn btn-primary">View My Work →</a>
-          <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+          <a href="#work" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View My Work →</a>
+          <a href="#contact" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">Get In Touch</a>
         </div>
       </div>
 
-      <!-- Code window — replace with a VS Code screenshot if you like -->
+      <!-- Hero Visual Studio Window -->
       <div class="hero-visual">
         <div class="code-window">
           <div class="code-chrome">
-            <span class="dot dot-red"></span>
-            <span class="dot dot-yellow"></span>
-            <span class="dot dot-green"></span>
+            <div class="dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
             <span class="file-name">portfolio.js</span>
           </div>
           <div class="code-body">
-            <div class="code-line"><span class="ln">1</span><span class="cm">// who i am</span></div>
-            <div class="code-line"><span class="ln">2</span><span class="kw">const </span><span class="fn">developer</span><span class="tx"> = {</span></div>
-            <div class="code-line"><span class="ln">3</span><span class="tx">&nbsp;&nbsp;name: </span><span class="str">"Harsh Vadgave"</span><span class="tx">,</span></div>
-            <div class="code-line"><span class="ln">4</span><span class="tx">&nbsp;&nbsp;role: </span><span class="str">"Web Developer"</span><span class="tx">,</span></div>
-            <div class="code-line"><span class="ln">5</span><span class="tx">&nbsp;&nbsp;loves: [</span><span class="str">"clean code"</span><span class="tx">,</span><span class="str">"fast UX"</span><span class="tx">,</span><span class="str">"chai☕"</span><span class="tx">],</span></div>
-            <div class="code-line"><span class="ln">6</span><span class="tx">&nbsp;&nbsp;available: </span><span class="acc">true</span><span class="tx">,</span></div>
-            <div class="code-line"><span class="ln">7</span><span class="tx">};</span></div>
-            <div class="code-line"><span class="ln">8</span></div>
-            <div class="code-line"><span class="ln">9</span><span class="cm">// what i do</span></div>
-            <div class="code-line"><span class="ln">10</span><span class="kw">function </span><span class="fn">build</span><span class="tx">(</span><span class="pm">idea</span><span class="tx">) {</span></div>
-            <div class="code-line"><span class="ln">11</span><span class="tx">&nbsp;&nbsp;</span><span class="kw">return </span><span class="fn">ship</span><span class="tx">(</span></div>
-            <div class="code-line"><span class="ln">12</span><span class="tx">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="fn">design</span><span class="tx">(</span><span class="fn">code</span><span class="tx">(</span><span class="pm">idea</span><span class="tx">))</span></div>
-            <div class="code-line"><span class="ln">13</span><span class="tx">&nbsp;&nbsp;);</span></div>
-            <div class="code-line"><span class="ln">14</span><span class="tx">}</span></div>
-            <div class="code-line"><span class="ln">15</span></div>
-            <div class="code-line"><span class="ln">16</span><span class="fn">build</span><span class="tx">(</span><span class="str">"your next project"</span><span class="tx">); </span><span class="acc">▌</span></div>
+            <div class="code-line"><span class="ln">1</span><span class="code-txt"><span class="cm">// who i am</span></span></div>
+            <div class="code-line"><span class="ln">2</span><span class="code-txt"><span class="kw">const </span><span class="fn">developer</span><span class="tx"> = {</span></span></div>
+            <div class="code-line"><span class="ln">3</span><span class="code-txt"><span class="tx">&nbsp;&nbsp;name: </span><span class="str">"Harsh Vadgave"</span><span class="tx">,</span></span></div>
+            <div class="code-line"><span class="ln">4</span><span class="code-txt"><span class="tx">&nbsp;&nbsp;role: </span><span class="str">"Web Developer"</span><span class="tx">,</span></span></div>
+            <div class="code-line"><span class="ln">5</span><span class="code-txt"><span class="tx">&nbsp;&nbsp;loves: [</span><span class="str">"clean code"</span><span class="tx">, </span><span class="str">"fast UX"</span><span class="tx">, </span><span class="str">"chai☕"</span><span class="tx">],</span></span></div>
+            <div class="code-line"><span class="ln">6</span><span class="code-txt"><span class="tx">&nbsp;&nbsp;available: </span><span class="acc">true</span><span class="tx">,</span></span></div>
+            <div class="code-line"><span class="ln">7</span><span class="code-txt"><span class="tx">};</span></span></div>
+            <div class="code-line"><span class="ln">8</span><span class="code-txt"></span></div>
+            <div class="code-line"><span class="ln">9</span><span class="code-txt"><span class="cm">// what i do</span></span></div>
+            <div class="code-line"><span class="ln">10</span><span class="code-txt"><span class="kw">function </span><span class="fn">build</span><span class="tx">(</span><span class="pm">idea</span><span class="tx">) {</span></span></div>
+            <div class="code-line"><span class="ln">11</span><span class="code-txt"><span class="tx">&nbsp;&nbsp;</span><span class="kw">return </span><span class="fn">ship</span><span class="tx">(</span></span></div>
+            <div class="code-line"><span class="ln">12</span><span class="code-txt"><span class="tx">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="fn">design</span><span class="tx">(</span><span class="fn">code</span><span class="tx">(</span><span class="pm">idea</span><span class="tx">))</span></span></div>
+            <div class="code-line"><span class="ln">13</span><span class="code-txt"><span class="tx">&nbsp;&nbsp;);</span></span></div>
+            <div class="code-line"><span class="ln">14</span><span class="code-txt"><span class="tx">}</span></span></div>
+            <div class="code-line"><span class="ln">15</span><span class="code-txt"></span></div>
+            <div class="code-line"><span class="ln">16</span><span class="code-txt"><span class="fn">build</span><span class="tx">(</span><span class="str">"your next project"</span><span class="tx">); </span><span class="acc">▌</span></span></div>
           </div>
         </div>
 
@@ -97,7 +102,7 @@
           <div class="badge-icon">⚡</div>
           <div class="badge-text">
             <strong>5 Projects</strong>
-            <span>are live</span>
+            <span>are live & active</span>
           </div>
         </div>
       </div>
@@ -107,40 +112,23 @@
   <!-- ─── MARQUEE ──────────────────────────────────────────── -->
   <div class="marquee-section">
     <div class="marquee-track" aria-hidden="true">
-      <!-- duplicated for seamless loop -->
-      <span class="marquee-item">HTML <span>·</span></span>
-      <span class="marquee-item">CSS <span>·</span></span>
-      <span class="marquee-item">JavaScript <span>·</span></span>
-      <span class="marquee-item">Form Integration <span>·</span></span>
-      <span class="marquee-item">Domain & Hosting <span>·</span></span>
-      <!-- <span class="marquee-item">React <span>·</span></span> -->
-      <!-- <span class="marquee-item">Node.js <span>·</span></span> -->
-      <!-- <span class="marquee-item">TypeScript <span>·</span></span> -->
-      <!-- <span class="marquee-item">REST APIs <span>·</span></span> -->
-      <!-- <span class="marquee-item">Git <span>·</span></span> -->
-      <!-- <span class="marquee-item">Figma <span>·</span></span> -->
-      <!-- <span class="marquee-item">MongoDB <span>·</span></span> -->
-      <!-- <span class="marquee-item">Tailwind CSS <span>·</span></span> -->
-      <!-- <span class="marquee-item">Next.js <span>·</span></span> -->
-      <span class="marquee-item">HTML <span>·</span></span>
-      <span class="marquee-item">CSS <span>·</span></span>
-      <span class="marquee-item">JavaScript <span>·</span></span>
-      <span class="marquee-item">Form Integration <span>·</span></span>
-      <span class="marquee-item">Domain & Hosting <span>·</span></span>
-      <!-- <span class="marquee-item">React <span>·</span></span>
-      <span class="marquee-item">Node.js <span>·</span></span>
-      <span class="marquee-item">TypeScript <span>·</span></span>
-      <span class="marquee-item">REST APIs <span>·</span></span>
-      <span class="marquee-item">Git <span>·</span></span>
-      <span class="marquee-item">Figma <span>·</span></span>
-      <span class="marquee-item">MongoDB <span>·</span></span>
-      <span class="marquee-item">Tailwind CSS <span>·</span></span>
-      <span class="marquee-item">Next.js <span>·</span></span> -->
-       <span class="marquee-item">HTML <span>·</span></span>
-      <span class="marquee-item">CSS <span>·</span></span>
-      <span class="marquee-item">JavaScript <span>·</span></span>
-      <span class="marquee-item">Form Integration <span>·</span></span>
-      <span class="marquee-item">Domain & Hosting <span>·</span></span>
+      <span class="marquee-item">HTML <span>★</span></span>
+      <span class="marquee-item">CSS3 <span>★</span></span>
+      <span class="marquee-item">JAVASCRIPT <span>★</span></span>
+      <span class="marquee-item">GOOGLE SHEETS API <span>★</span></span>
+      <span class="marquee-item">NEO-BRUTALISM <span>★</span></span>
+      <span class="marquee-item">MAXIMALIST DESIGN <span>★</span></span>
+      <span class="marquee-item">FAST UX <span>★</span></span>
+      <span class="marquee-item">RESPONSIVE WEB <span>★</span></span>
+
+      <span class="marquee-item">HTML <span>★</span></span>
+      <span class="marquee-item">CSS3 <span>★</span></span>
+      <span class="marquee-item">JAVASCRIPT <span>★</span></span>
+      <span class="marquee-item">GOOGLE SHEETS API <span>★</span></span>
+      <span class="marquee-item">NEO-BRUTALISM <span>★</span></span>
+      <span class="marquee-item">MAXIMALIST DESIGN <span>★</span></span>
+      <span class="marquee-item">FAST UX <span>★</span></span>
+      <span class="marquee-item">RESPONSIVE WEB <span>★</span></span>
     </div>
   </div>
 
@@ -148,7 +136,7 @@
   <section id="work">
     <div class="container">
       <div class="section-header reveal">
-        <div class="eyebrow">selected work</div>
+        <div class="eyebrow">[01 // SELECTED WORK & EXPERIMENTS]</div>
         <h2>Projects I'm proud of</h2>
       </div>
 
@@ -164,7 +152,6 @@
                 <span class="dot dot-green"></span>
                 <span class="browser-url">harshvadgave.github.io/demobuilderwebsite/</span>
               </div>
-              <!-- REPLACE: add <img src="your-screenshot.png" alt="DevFlow"> inside .project-img -->
               <div class="project-img">
                 <picture>
                   <source type="image/webp" srcset="images/demobuilders-600w.webp 600w, images/demobuilders-1200w.webp 1200w, images/demobuilders.webp 1902w" sizes="(max-width: 860px) 100vw, 520px">
@@ -175,17 +162,17 @@
           </div>
           <div class="project-info">
             <div class="project-tags">
-                <span class="tag">HTML & CSS</span>
+              <span class="tag">HTML & CSS</span>
               <span class="tag">JavaScript</span>
-              <span class="tag">Whatsapp Integration</span>
+              <span class="tag">WhatsApp API</span>
             </div>
             <h3>Demo Builders Website</h3>
             <p class="project-desc">
-              A simple, modern website solution for builders to showcase their projects, attract new clients, and grow their construction business online.
+              A high-converting, modern web application for construction companies & builders to display portfolio projects, generate direct leads, and scale online presence.
             </p>
             <div class="project-links">
-              <a href="https://harshvadgave.github.io/demobuilderwebsite/pages/" class="project-link">Live Site ↗</a>
-              <a href="https://github.com/HarshVadgave/demobuilderwebsite" class="project-link">GitHub →</a>
+              <a href="https://harshvadgave.github.io/demobuilderwebsite/pages/" class="project-link" target="_blank" rel="noopener noreferrer">Live Site ↗</a>
+              <a href="https://github.com/HarshVadgave/demobuilderwebsite" class="project-link" target="_blank" rel="noopener noreferrer">GitHub →</a>
             </div>
           </div>
         </div>
@@ -214,13 +201,13 @@
               <span class="tag">CSS</span>
               <span class="tag">Vanilla JS</span>
             </div>
-            <h3>CSSGen</h3>
+            <h3>CSSGen Studio</h3>
             <p class="project-desc">
-             Free online CSS generator for glassmorphism, neumorphism, shadows, and responsive UI design.
+              Free online developer toolkit for glassmorphism, neumorphism, complex CSS shadows, and quick UI snippet generation with instant copy-to-clipboard.
             </p>
             <div class="project-links">
-              <a href="https://harshvadgave.github.io/cssgen/" class="project-link">Live Site ↗</a>
-              <a href="https://github.com/HarshVadgave/cssgen" class="project-link">GitHub →</a>
+              <a href="https://harshvadgave.github.io/cssgen/" class="project-link" target="_blank" rel="noopener noreferrer">Live Site ↗</a>
+              <a href="https://github.com/HarshVadgave/cssgen" class="project-link" target="_blank" rel="noopener noreferrer">GitHub →</a>
             </div>
           </div>
         </div>
@@ -251,11 +238,11 @@
             </div>
             <h3>Cypher Decoding Game</h3>
             <p class="project-desc">
-              Play CypherBreach - a free online Caesar cipher decoder game with 4 difficulty levels. Decrypt secret codes, solve encryption puzzles, and master cryptography in this addictive hacking-themed brain game. Perfect for students learning cryptography and puzzle enthusiasts.
+              Play CypherBreach — an interactive Caesar cipher decryption puzzle with 4 difficulty levels. Crack secret codes, solve cryptography challenges, and master algorithms.
             </p>
             <div class="project-links">
-              <a href="https://harshvadgave.github.io/cypher-game/" class="project-link">Live Site ↗</a>
-              <a href="https://github.com/HarshVadgave/cypher-game" class="project-link">GitHub →</a>
+              <a href="https://harshvadgave.github.io/cypher-game/" class="project-link" target="_blank" rel="noopener noreferrer">Live Site ↗</a>
+              <a href="https://github.com/HarshVadgave/cypher-game" class="project-link" target="_blank" rel="noopener noreferrer">GitHub →</a>
             </div>
           </div>
         </div>
@@ -269,46 +256,40 @@
     <div class="container">
       <div class="about-grid">
         <div class="about-text reveal">
-          <div class="eyebrow">about me</div>
-          <h2 style="font-family: var(--font-display); font-size: clamp(28px,3.5vw,40px); font-weight:700; letter-spacing:-0.03em; margin-bottom:28px; line-height:1.15;">
-            The person<br>behind the keyboard
+          <div class="eyebrow">[02 // MANIFESTO & PROFILE]</div>
+          <h2 style="font-family: var(--font-display); font-size: clamp(32px,4vw,48px); font-weight:700; letter-spacing:-0.03em; margin-bottom:28px; line-height:1.05; text-transform:uppercase;">
+            The person behind<br>the keyboard
           </h2>
           <p>
-            I've been building for the web for <strong>2+ years</strong>, starting with
-            hacking together small tools I actually needed. What kept me going was
-            that moment when something snaps into place — the layout clicks,
-            the interaction feels right, the page loads faster than expected.
+            I've been building for the web for <strong>2+ years</strong>, starting with hacking together small tools I actually needed. What kept me going was that moment when something snaps into place — the layout clicks, the interaction feels crisp, and the page loads instantly.
           </p>
           <p>
-            I care about <strong>performance, accessibility, and the small details</strong>
-            most people skip. Not because they're required, but because
-            they're the difference between a project feeling done and feeling
-            finished.
+            I care deeply about <strong>performance, high visual impact, and detail-oriented craftsmanship</strong>. Not because they're required, but because they're the difference between a project feeling done and feeling truly finished.
           </p>
 
           <div class="stats-row">
             <div class="stat-pill">
               <strong>2+</strong>
-              Years experience
+              Years Experience
             </div>
             <div class="stat-pill">
               <strong>5</strong>
-              Projects are Live
+              Projects Live
             </div>
             <div class="stat-pill">
-              <strong>Open</strong>
-              To freelance
+              <strong>OPEN</strong>
+              For Freelance
             </div>
           </div>
         </div>
 
         <div class="about-photo-wrap reveal">
-          <!-- REPLACE: add <img src="your-photo.jpg" alt="Alex"> inside .about-photo -->
           <div class="about-photo">
             <picture>
               <source type="image/webp" srcset="images/profilePic-400w.webp 400w, images/profilePic-800w.webp 800w, images/profilePic.webp 2048w" sizes="(max-width: 860px) 100vw, 400px">
               <img src="images/profilePic.jpeg" alt="Harsh Vadgave" width="2048" height="2048" loading="lazy" decoding="async">
             </picture>
+            <div class="about-photo-badge">HARSH VADGAVE // DEV</div>
           </div>
         </div>
       </div>
@@ -320,47 +301,55 @@
     <div class="container">
       <div class="contact-inner reveal">
         <div class="section-header">
-          <div class="eyebrow">let's talk</div>
+          <div class="eyebrow">[03 // LET'S TALK]</div>
           <h2>Got a project<br>in mind?</h2>
         </div>
         <p class="contact-body">
-          I'm currently available for freelance work and open to full-time
-          opportunities. Whether it's a new product, an existing codebase that
-          needs love, or just a question — my inbox is open.
+          I'm currently available for freelance projects and open to full-time opportunities. Whether you need a new website, custom form integration, or standard optimization — my inbox is open.
         </p>
-        <a href="mailto:harshvadgave169969@gmail.com" class="contact-email">
+
+        <a href="mailto:harshvadgave169969@gmail.com" class="contact-email" target="_blank" rel="noopener noreferrer">
           harshvadgave169969@gmail.com →
         </a>
 
-       
-  <h1>Contact</h1>
-  <div class="contact-wrapper">
-    <div class="contact-info">
-      <p>Want to work together or need a website?</p>
-       <strong>Email:</strong><a href="mailto:harshvadgave169969@gmail.com"><p> harshvadgave169969@gmail.com</p></a> 
-      <strong>WhatsApp:</strong> <a href="https://wa.me/7841811323" target="_blank" class="contact-whatsapp"><p> 7841811323</p></a> 
-    </div>
+        <div class="contact-wrapper">
+          <div class="contact-info-card">
+            <h3>Direct Contact</h3>
+            <p>Want to collaborate or discuss a new project?</p>
+            
+            <div class="contact-detail-item">
+              <label>Email Address</label>
+              <a href="mailto:harshvadgave169969@gmail.com" target="_blank" rel="noopener noreferrer">harshvadgave169969@gmail.com</a>
+            </div>
 
-    <form id="contactForm">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit" id="submitBtn">Send Message</button>
-      <div id="formStatus" class="form-status" aria-live="polite"></div>
-    </form>
-  </div>
+            <div class="contact-detail-item">
+              <label>WhatsApp</label>
+              <a href="https://wa.me/7841811323" target="_blank" rel="noopener noreferrer">+91 7841811323</a>
+            </div>
+          </div>
 
+          <form id="contactForm">
+            <input type="text" name="name" placeholder="YOUR NAME *" required>
+            <input type="email" name="email" placeholder="YOUR EMAIL *" required>
+            <textarea name="message" rows="5" placeholder="YOUR MESSAGE *" required></textarea>
+            <button type="submit" id="submitBtn">
+              <span>Send Message</span>
+              <span>→</span>
+            </button>
+            <div id="formStatus" class="form-status" aria-live="polite"></div>
+          </form>
+        </div>
 
         <div class="social-row">
-          <a href="https://github.com/HarshVadgave" class="social-link">
-            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          <a href="https://github.com/HarshVadgave" class="social-link" target="_blank" rel="noopener noreferrer">
+            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
             GitHub
           </a>
-          <a href="https://www.linkedin.com/in/harsh-vadgave-79388b2a1/" class="social-link">
-            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          <a href="https://www.linkedin.com/in/harsh-vadgave-79388b2a1/" class="social-link" target="_blank" rel="noopener noreferrer">
+            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
             LinkedIn
           </a>
-          <a href="#" class="social-link">
+          <a href="https://twitter.com/HarshVadgave" class="social-link" target="_blank" rel="noopener noreferrer">
             <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
             Twitter / X
           </a>
@@ -371,7 +360,7 @@
 
   <!-- ─── FOOTER ────────────────────────────────────────────── -->
   <footer>
-    Designed & built by <span>Harsh Vadgave</span> &nbsp;·&nbsp; 2026
+    Designed & Built by <span>Harsh Vadgave</span> &nbsp;·&nbsp; 2026
   </footer>
 
   <!-- ─── JS ───────────────────────────────────────────────── -->

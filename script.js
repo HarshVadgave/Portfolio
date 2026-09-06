@@ -1,44 +1,93 @@
- // 1. Cursor spotlight on hero
-    const hero = document.getElementById('hero');
-    hero.addEventListener('mousemove', (e) => {
-      const rect = hero.getBoundingClientRect();
-      const x = ((e.clientX - rect.left) / rect.width * 100).toFixed(1) + '%';
-      const y = ((e.clientY - rect.top)  / rect.height * 100).toFixed(1) + '%';
-      hero.style.setProperty('--mx', x);
-      hero.style.setProperty('--my', y);
-    });
+// 0. Theme Switcher & Persistence System
+const themeToggleBtn = document.getElementById("themeToggle");
 
-    // 2. Scroll-triggered reveal
-    const revealEls = document.querySelectorAll('.reveal');
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target);
+function getInitialTheme() {
+  const savedTheme = localStorage.getItem("portfolio_theme");
+  if (savedTheme === "light" || savedTheme === "dark") {
+    return savedTheme;
+  }
+  return window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+}
+
+function setTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+  localStorage.setItem("portfolio_theme", theme);
+}
+
+// Set initial theme immediately
+const currentTheme = getInitialTheme();
+setTheme(currentTheme);
+
+if (themeToggleBtn) {
+  themeToggleBtn.addEventListener("click", () => {
+    const activeTheme = document.documentElement.getAttribute("data-theme") || "dark";
+    const nextTheme = activeTheme === "dark" ? "light" : "dark";
+    setTheme(nextTheme);
+  });
+}
+
+// 1. Ensure ALL links on the website open in a new tab when clicked
+document.querySelectorAll('a').forEach(link => {
+  link.setAttribute('target', '_blank');
+  link.setAttribute('rel', 'noopener noreferrer');
+});
+
+// Also dynamically ensure target="_blank" on click for any newly added or queried links
+document.addEventListener('click', (e) => {
+  const link = e.target.closest('a');
+  if (link) {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+  }
+});
+
+// 2. Cursor spotlight on hero
+const hero = document.getElementById('hero');
+if (hero) {
+  hero.addEventListener('mousemove', (e) => {
+    const rect = hero.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width * 100).toFixed(1) + '%';
+    const y = ((e.clientY - rect.top) / rect.height * 100).toFixed(1) + '%';
+    hero.style.setProperty('--mx', x);
+    hero.style.setProperty('--my', y);
+  });
+}
+
+// 3. Scroll-triggered reveal
+const revealEls = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+revealEls.forEach(el => revealObserver.observe(el));
+
+// 4. Active nav link via IntersectionObserver
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+
+const navObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.getAttribute('id');
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && href.includes(`#${id}`)) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
         }
       });
-    }, { threshold: 0.12 });
-    revealEls.forEach(el => revealObserver.observe(el));
+    }
+  });
+}, { rootMargin: '-40% 0px -55% 0px' });
 
-    // 3. Active nav link via IntersectionObserver
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-links a');
+sections.forEach(s => navObserver.observe(s));
 
-    const navObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const id = entry.target.getAttribute('id');
-          navLinks.forEach(link => {
-            link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
-          });
-        }
-      });
-    }, { rootMargin: '-40% 0px -55% 0px' });
-
-    sections.forEach(s => navObserver.observe(s));
-
-
-// 4. Contact form submission to Google Sheets
+// 5. Contact form submission to Google Sheets
 const scriptURL = "https://script.google.com/macros/s/AKfycbxPDri6Fqr36aP11Rvppoxli3UwfPFliEHh97lds9WtetLtTZpUSVZpsL8j0YUWu9Wn/exec";
 const form = document.getElementById("contactForm");
 const submitBtn = document.getElementById("submitBtn");
@@ -65,14 +114,14 @@ if (form) {
     const msgVal = form.elements["message"] ? form.elements["message"].value.trim() : "";
 
     if (!nameVal || !emailVal || !msgVal) {
-      showStatus("Please fill in all required fields.", "error");
+      showStatus("PLEASE FILL IN ALL REQUIRED FIELDS.", "error");
       return;
     }
 
     // Disable button to prevent duplicate rapid submissions
     if (submitBtn) submitBtn.disabled = true;
-    const origBtnText = submitBtn ? submitBtn.textContent : "Send Message";
-    if (submitBtn) submitBtn.textContent = "Sending...";
+    const origBtnHtml = submitBtn ? submitBtn.innerHTML : "<span>SEND MESSAGE</span><span>→</span>";
+    if (submitBtn) submitBtn.innerHTML = "<span>SENDING...</span><span>⌛</span>";
     hideStatus();
 
     try {
@@ -84,7 +133,7 @@ if (form) {
       });
 
       if (response.ok || response.type === "opaque") {
-        showStatus("Message sent successfully! Thank you for reaching out.", "success");
+        showStatus("MESSAGE SENT SUCCESSFULLY! THANK YOU FOR REACHING OUT.", "success");
         form.reset();
       } else {
         throw new Error(`Server returned status ${response.status}`);
@@ -99,16 +148,16 @@ if (form) {
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
           body: urlParams
         });
-        showStatus("Message sent successfully! Thank you for reaching out.", "success");
+        showStatus("MESSAGE SENT SUCCESSFULLY! THANK YOU FOR REACHING OUT.", "success");
         form.reset();
       } catch (fallbackErr) {
         console.error("Form submission failed:", fallbackErr);
-        showStatus("Something went wrong while sending your message. Please try again or email directly.", "error");
+        showStatus("SOMETHING WENT WRONG WHILE SENDING YOUR MESSAGE. PLEASE TRY AGAIN OR EMAIL DIRECTLY.", "error");
       }
     } finally {
       if (submitBtn) {
         submitBtn.disabled = false;
-        submitBtn.textContent = origBtnText;
+        submitBtn.innerHTML = origBtnHtml;
       }
     }
   });
