@@ -11,7 +11,7 @@
   <meta name="google-site-verification" content="FonUvCHA_Q2y08HlwY9KdrZRwSpHVlFm3bktwMlGCTk" />
   <meta name="author" content="Harsh Vadgave">
   
-  <link rel="icon" type="image/png" href="images/logo.png" />
+  <link rel="icon" type="image/png" href="images/favicon-32.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -24,7 +24,12 @@
   <nav>
     <div class="nav-inner">
     
-      <a href="#hero" class="nav-logo"><img src="images/logo.png" alt="Logo" class="nav-logo-img">harshvadgave<span>.</span>fun</a>
+      <a href="#hero" class="nav-logo">
+        <picture>
+          <source type="image/webp" srcset="images/logo-120.webp">
+          <img src="images/logo.png" alt="Logo" class="nav-logo-img" width="40" height="40" fetchpriority="high" decoding="async">
+        </picture>harshvadgave<span>.</span>fun
+      </a>
       <ul class="nav-links">
         <li><a href="#work">Work</a></li>
         <li><a href="#about">About</a></li>
@@ -161,7 +166,10 @@
               </div>
               <!-- REPLACE: add <img src="your-screenshot.png" alt="DevFlow"> inside .project-img -->
               <div class="project-img">
-                <img src="images/demobuilders.png" alt="DevFlow">
+                <picture>
+                  <source type="image/webp" srcset="images/demobuilders-600w.webp 600w, images/demobuilders-1200w.webp 1200w, images/demobuilders.webp 1902w" sizes="(max-width: 860px) 100vw, 520px">
+                  <img src="images/demobuilders.png" alt="Demo Builders Website Screenshot" width="1902" height="1079" loading="lazy" decoding="async">
+                </picture>
               </div>
             </div>
           </div>
@@ -193,7 +201,10 @@
                 <span class="browser-url">harshvadgave.github.io/cssgen/</span>
               </div>
               <div class="project-img">
-                <img src="images/cssgen.png" alt="CssGen website">
+                <picture>
+                  <source type="image/webp" srcset="images/cssgen-600w.webp 600w, images/cssgen-1200w.webp 1200w, images/cssgen.webp 1919w" sizes="(max-width: 860px) 100vw, 520px">
+                  <img src="images/cssgen.png" alt="CssGen website screenshot" width="1919" height="1078" loading="lazy" decoding="async">
+                </picture>
               </div>
             </div>
           </div>
@@ -225,7 +236,10 @@
                 <span class="browser-url">harshvadgave.github.io/cypher-game/</span>
               </div>
               <div class="project-img">
-                <img src="images/cypher.png" alt="Cypher website">`
+                <picture>
+                  <source type="image/webp" srcset="images/cypher-600w.webp 600w, images/cypher-1200w.webp 1200w, images/cypher.webp 1900w" sizes="(max-width: 860px) 100vw, 520px">
+                  <img src="images/cypher.png" alt="Cypher website screenshot" width="1900" height="1075" loading="lazy" decoding="async">
+                </picture>
               </div>
             </div>
           </div>
@@ -291,7 +305,10 @@
         <div class="about-photo-wrap reveal">
           <!-- REPLACE: add <img src="your-photo.jpg" alt="Alex"> inside .about-photo -->
           <div class="about-photo">
-            <img src="images/profilePic.jpeg" alt="Harsh Vadgave">
+            <picture>
+              <source type="image/webp" srcset="images/profilePic-400w.webp 400w, images/profilePic-800w.webp 800w, images/profilePic.webp 2048w" sizes="(max-width: 860px) 100vw, 400px">
+              <img src="images/profilePic.jpeg" alt="Harsh Vadgave" width="2048" height="2048" loading="lazy" decoding="async">
+            </picture>
           </div>
         </div>
       </div>

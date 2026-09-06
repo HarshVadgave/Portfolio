@@ -472,10 +472,11 @@
       margin-top: 8px;
     }
 
-    /* When you have real images, use this class on an <img> */
+    .project-img picture,
     .project-img img {
       width: 100%;
       height: 100%;
+      display: block;
       object-fit: cover;
     }
 
@@ -618,10 +619,11 @@
     .photo-placeholder { position: relative; z-index: 1; }
     .photo-icon { font-size: 40px; margin-bottom: 12px; opacity: 0.3; }
 
-    /* Replace placeholder: add <img> inside .about-photo */
+    .about-photo picture,
     .about-photo img {
       width: 100%;
       height: 100%;
+      display: block;
       object-fit: cover;
     }
 
