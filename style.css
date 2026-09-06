@@ -843,6 +843,36 @@
   transform: translateY(-1px);
 }
 
+#contactForm button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.form-status {
+  display: none;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  padding: 10px 14px;
+  border-radius: 4px;
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
+.form-status.success {
+  display: block;
+  background: rgba(195, 245, 60, 0.12);
+  border: 1px solid #c3f53c;
+  color: #c3f53c;
+}
+
+.form-status.error {
+  display: block;
+  background: rgba(255, 95, 87, 0.12);
+  border: 1px solid #ff5f57;
+  color: #ff5f57;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .contact-wrapper {
