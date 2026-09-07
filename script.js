@@ -26,6 +26,64 @@ if (themeToggleBtn) {
   });
 }
 
+// 0b. Mobile hamburger menu
+const menuToggle = document.getElementById("menuToggle");
+const navLinksEl = document.getElementById("navLinks");
+const navOverlay = document.getElementById("navOverlay");
+
+function openMenu() {
+  navLinksEl.classList.add("open");
+  navOverlay.classList.add("open");
+  menuToggle.classList.add("active");
+  menuToggle.setAttribute("aria-expanded", "true");
+  document.body.classList.add("menu-open");
+}
+
+function closeMenu() {
+  navLinksEl.classList.remove("open");
+  navOverlay.classList.remove("open");
+  menuToggle.classList.remove("active");
+  menuToggle.setAttribute("aria-expanded", "false");
+  document.body.classList.remove("menu-open");
+}
+
+if (menuToggle && navLinksEl) {
+  menuToggle.addEventListener("click", () => {
+    if (navLinksEl.classList.contains("open")) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  navLinksEl.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  if (navOverlay) {
+    navOverlay.addEventListener("click", closeMenu);
+  }
+
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeMenu();
+  });
+
+  // Close mobile menu automatically if the viewport is resized back to desktop width
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 900 && navLinksEl.classList.contains("open")) {
+      closeMenu();
+    }
+  });
+}
+
+// 0c. Fix mobile viewport height quirks (iOS Safari / Android browser chrome)
+function setViewportHeight() {
+  document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+}
+setViewportHeight();
+window.addEventListener('resize', setViewportHeight);
+window.addEventListener('orientationchange', setViewportHeight);
+
 // 1. Ensure ALL links on the website open in a new tab when clicked
 document.querySelectorAll('a').forEach(link => {
   link.setAttribute('target', '_blank');
