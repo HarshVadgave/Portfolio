@@ -1,11 +1,9 @@
-// 0. Theme Switcher & Persistence System
+// ── 0. Theme Switcher & Persistence ────────────────────────
 const themeToggleBtn = document.getElementById("themeToggle");
 
 function getInitialTheme() {
   const savedTheme = localStorage.getItem("portfolio_theme");
-  if (savedTheme === "light" || savedTheme === "dark") {
-    return savedTheme;
-  }
+  if (savedTheme === "light" || savedTheme === "dark") return savedTheme;
   return window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
 }
 
@@ -14,138 +12,128 @@ function setTheme(theme) {
   localStorage.setItem("portfolio_theme", theme);
 }
 
-// Set initial theme immediately
-const currentTheme = getInitialTheme();
-setTheme(currentTheme);
+setTheme(getInitialTheme());
 
 if (themeToggleBtn) {
   themeToggleBtn.addEventListener("click", () => {
     const activeTheme = document.documentElement.getAttribute("data-theme") || "dark";
-    const nextTheme = activeTheme === "dark" ? "light" : "dark";
-    setTheme(nextTheme);
+    setTheme(activeTheme === "dark" ? "light" : "dark");
   });
 }
 
-// 0b. Mobile hamburger menu
+// ── 0b. Mobile hamburger menu ───────────────────────────────
 const menuToggle = document.getElementById("menuToggle");
 const navLinksEl = document.getElementById("navLinks");
 const navOverlay = document.getElementById("navOverlay");
 
 function openMenu() {
   navLinksEl.classList.add("open");
-  navOverlay.classList.add("open");
+  navOverlay && navOverlay.classList.add("open");
   menuToggle.classList.add("active");
   menuToggle.setAttribute("aria-expanded", "true");
   document.body.classList.add("menu-open");
 }
 
 function closeMenu() {
-  navLinksEl.classList.remove("open");
-  navOverlay.classList.remove("open");
-  menuToggle.classList.remove("active");
-  menuToggle.setAttribute("aria-expanded", "false");
+  navLinksEl && navLinksEl.classList.remove("open");
+  navOverlay && navOverlay.classList.remove("open");
+  menuToggle && menuToggle.classList.remove("active");
+  menuToggle && menuToggle.setAttribute("aria-expanded", "false");
   document.body.classList.remove("menu-open");
 }
 
 if (menuToggle && navLinksEl) {
   menuToggle.addEventListener("click", () => {
-    if (navLinksEl.classList.contains("open")) {
-      closeMenu();
-    } else {
-      openMenu();
-    }
+    navLinksEl.classList.contains("open") ? closeMenu() : openMenu();
   });
 
+  // Close when any nav link is clicked (for smooth-scroll internal links)
   navLinksEl.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", closeMenu);
   });
 
-  if (navOverlay) {
-    navOverlay.addEventListener("click", closeMenu);
-  }
+  navOverlay && navOverlay.addEventListener("click", closeMenu);
 
   window.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeMenu();
   });
 
-  // Close mobile menu automatically if the viewport is resized back to desktop width
   window.addEventListener("resize", () => {
-    if (window.innerWidth > 900 && navLinksEl.classList.contains("open")) {
-      closeMenu();
-    }
+    if (window.innerWidth > 900 && navLinksEl.classList.contains("open")) closeMenu();
   });
 }
 
-// 0c. Fix mobile viewport height quirks (iOS Safari / Android browser chrome)
+// ── 0c. Fix mobile viewport height quirks (iOS Safari / Android) ──
 function setViewportHeight() {
-  document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+  document.documentElement.style.setProperty("--vh", `${window.innerHeight * 0.01}px`);
 }
 setViewportHeight();
-window.addEventListener('resize', setViewportHeight);
-window.addEventListener('orientationchange', setViewportHeight);
+window.addEventListener("resize", setViewportHeight);
+window.addEventListener("orientationchange", setViewportHeight);
 
-// 1. Ensure ALL links on the website open in a new tab when clicked
-document.querySelectorAll('a').forEach(link => {
-  link.setAttribute('target', '_blank');
-  link.setAttribute('rel', 'noopener noreferrer');
-});
+// ── 1. Correct link targets ─────────────────────────────────
+// Internal anchor links: same tab. External links: new tab.
+document.querySelectorAll("a").forEach(link => {
+  const href = link.getAttribute("href") || "";
 
-// Also dynamically ensure target="_blank" on click for any newly added or queried links
-document.addEventListener('click', (e) => {
-  const link = e.target.closest('a');
-  if (link) {
-    link.setAttribute('target', '_blank');
-    link.setAttribute('rel', 'noopener noreferrer');
+  // Internal: anchor, mailto, relative paths — keep same tab
+  const isInternal =
+    href.startsWith("#") ||
+    href === "" ||
+    (!href.startsWith("http://") && !href.startsWith("https://") && !href.startsWith("mailto:") && !href.startsWith("wa.me"));
+
+  if (isInternal) {
+    link.removeAttribute("target");
+    link.removeAttribute("rel");
+  } else {
+    // External: GitHub, LinkedIn, Twitter, mailto, WhatsApp, live sites
+    link.setAttribute("target", "_blank");
+    link.setAttribute("rel", "noopener noreferrer");
   }
 });
 
-// 2. Cursor spotlight on hero
-const hero = document.getElementById('hero');
+// ── 2. Cursor spotlight on hero ─────────────────────────────
+const hero = document.getElementById("hero");
 if (hero) {
-  hero.addEventListener('mousemove', (e) => {
+  hero.addEventListener("mousemove", (e) => {
     const rect = hero.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width * 100).toFixed(1) + '%';
-    const y = ((e.clientY - rect.top) / rect.height * 100).toFixed(1) + '%';
-    hero.style.setProperty('--mx', x);
-    hero.style.setProperty('--my', y);
+    const x = ((e.clientX - rect.left) / rect.width * 100).toFixed(1) + "%";
+    const y = ((e.clientY - rect.top) / rect.height * 100).toFixed(1) + "%";
+    hero.style.setProperty("--mx", x);
+    hero.style.setProperty("--my", y);
   });
 }
 
-// 3. Scroll-triggered reveal
-const revealEls = document.querySelectorAll('.reveal');
+// ── 3. Scroll-triggered reveal ──────────────────────────────
+const revealEls = document.querySelectorAll(".reveal");
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
+      entry.target.classList.add("visible");
       revealObserver.unobserve(entry.target);
     }
   });
 }, { threshold: 0.12 });
 revealEls.forEach(el => revealObserver.observe(el));
 
-// 4. Active nav link via IntersectionObserver
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-links a');
+// ── 4. Active nav link via IntersectionObserver ─────────────
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll(".nav-links a");
 
 const navObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      const id = entry.target.getAttribute('id');
+      const id = entry.target.getAttribute("id");
       navLinks.forEach(link => {
-        const href = link.getAttribute('href');
-        if (href && href.includes(`#${id}`)) {
-          link.classList.add('active');
-        } else {
-          link.classList.remove('active');
-        }
+        const href = link.getAttribute("href") || "";
+        link.classList.toggle("active", href.includes(`#${id}`));
       });
     }
   });
-}, { rootMargin: '-40% 0px -55% 0px' });
-
+}, { rootMargin: "-40% 0px -55% 0px" });
 sections.forEach(s => navObserver.observe(s));
 
-// 5. Contact form submission to Google Sheets
+// ── 5. Contact form → Google Sheets ────────────────────────
 const scriptURL = "https://script.google.com/macros/s/AKfycbxPDri6Fqr36aP11Rvppoxli3UwfPFliEHh97lds9WtetLtTZpUSVZpsL8j0YUWu9Wn/exec";
 const form = document.getElementById("contactForm");
 const submitBtn = document.getElementById("submitBtn");
@@ -167,28 +155,23 @@ if (form) {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const nameVal = form.elements["name"] ? form.elements["name"].value.trim() : "";
-    const emailVal = form.elements["email"] ? form.elements["email"].value.trim() : "";
-    const msgVal = form.elements["message"] ? form.elements["message"].value.trim() : "";
+    const nameVal = form.elements["name"]?.value.trim() || "";
+    const emailVal = form.elements["email"]?.value.trim() || "";
+    const msgVal = form.elements["message"]?.value.trim() || "";
 
     if (!nameVal || !emailVal || !msgVal) {
       showStatus("PLEASE FILL IN ALL REQUIRED FIELDS.", "error");
       return;
     }
 
-    // Disable button to prevent duplicate rapid submissions
     if (submitBtn) submitBtn.disabled = true;
-    const origBtnHtml = submitBtn ? submitBtn.innerHTML : "<span>SEND MESSAGE</span><span>→</span>";
+    const origBtnHtml = submitBtn?.innerHTML || "<span>SEND MESSAGE</span><span>→</span>";
     if (submitBtn) submitBtn.innerHTML = "<span>SENDING...</span><span>⌛</span>";
     hideStatus();
 
     try {
       const formData = new FormData(form);
-      
-      const response = await fetch(scriptURL, {
-        method: "POST",
-        body: formData
-      });
+      const response = await fetch(scriptURL, { method: "POST", body: formData });
 
       if (response.ok || response.type === "opaque") {
         showStatus("MESSAGE SENT SUCCESSFULLY! THANK YOU FOR REACHING OUT.", "success");
@@ -197,7 +180,7 @@ if (form) {
         throw new Error(`Server returned status ${response.status}`);
       }
     } catch (err) {
-      console.warn("Primary fetch encountered an issue, attempting fallback...", err);
+      console.warn("Primary fetch issue, attempting fallback...", err);
       try {
         const urlParams = new URLSearchParams(new FormData(form)).toString();
         await fetch(scriptURL, {
@@ -210,7 +193,7 @@ if (form) {
         form.reset();
       } catch (fallbackErr) {
         console.error("Form submission failed:", fallbackErr);
-        showStatus("SOMETHING WENT WRONG WHILE SENDING YOUR MESSAGE. PLEASE TRY AGAIN OR EMAIL DIRECTLY.", "error");
+        showStatus("SOMETHING WENT WRONG. PLEASE TRY AGAIN OR EMAIL DIRECTLY.", "error");
       }
     } finally {
       if (submitBtn) {
