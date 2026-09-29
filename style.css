@@ -1368,3 +1368,12 @@ footer span {
   }
   a, button, .nav-links a, .theme-toggle, .menu-toggle { -webkit-tap-highlight-color: transparent; }
 }
+
+/* ─── DESKTOP SYSTEM INTEGRATION ────────────────────────────── */
+/* Keeps hero layout stable when the window card is injected     */
+.hero-visual {
+  min-height: 380px; /* prevents layout jump before JS runs */
+  position: relative;
+}
+
+/* hero-badge visibility is handled by desktop.css state classes */

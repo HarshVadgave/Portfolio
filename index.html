@@ -13,9 +13,10 @@
   <link rel="icon" type="image/png" href="images/favicon-32.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700;800&family=VT323&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="desktop.css">
 </head>
 <body>
 
@@ -73,44 +74,9 @@
         </div>
       </div>
 
-      <!-- Hero Visual Studio Window -->
+      <!-- Hero Visual — interactive Windows system built by desktop.js -->
       <div class="hero-visual">
-        <div class="code-window">
-          <div class="code-chrome">
-            <div class="dots">
-              <span class="dot dot-red"></span>
-              <span class="dot dot-yellow"></span>
-              <span class="dot dot-green"></span>
-            </div>
-            <span class="file-name">portfolio.js</span>
-          </div>
-          <div class="code-body">
-            <div class="code-line"><span class="ln">1</span><span class="code-txt"><span class="cm">// who i am</span></span></div>
-            <div class="code-line"><span class="ln">2</span><span class="code-txt"><span class="kw">const </span><span class="fn">developer</span><span class="tx"> = {</span></span></div>
-            <div class="code-line"><span class="ln">3</span><span class="code-txt"><span class="tx">&nbsp;&nbsp;name: </span><span class="str">"Harsh Vadgave"</span><span class="tx">,</span></span></div>
-            <div class="code-line"><span class="ln">4</span><span class="code-txt"><span class="tx">&nbsp;&nbsp;role: </span><span class="str">"Web Developer"</span><span class="tx">,</span></span></div>
-            <div class="code-line"><span class="ln">5</span><span class="code-txt"><span class="tx">&nbsp;&nbsp;loves: [</span><span class="str">"clean code"</span><span class="tx">, </span><span class="str">"fast UX"</span><span class="tx">, </span><span class="str">"chai☕"</span><span class="tx">],</span></span></div>
-            <div class="code-line"><span class="ln">6</span><span class="code-txt"><span class="tx">&nbsp;&nbsp;available: </span><span class="acc">true</span><span class="tx">,</span></span></div>
-            <div class="code-line"><span class="ln">7</span><span class="code-txt"><span class="tx">};</span></span></div>
-            <div class="code-line"><span class="ln">8</span><span class="code-txt"></span></div>
-            <div class="code-line"><span class="ln">9</span><span class="code-txt"><span class="cm">// what i do</span></span></div>
-            <div class="code-line"><span class="ln">10</span><span class="code-txt"><span class="kw">function </span><span class="fn">build</span><span class="tx">(</span><span class="pm">idea</span><span class="tx">) {</span></span></div>
-            <div class="code-line"><span class="ln">11</span><span class="code-txt"><span class="tx">&nbsp;&nbsp;</span><span class="kw">return </span><span class="fn">ship</span><span class="tx">(</span></span></div>
-            <div class="code-line"><span class="ln">12</span><span class="code-txt"><span class="tx">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="fn">design</span><span class="tx">(</span><span class="fn">code</span><span class="tx">(</span><span class="pm">idea</span><span class="tx">))</span></span></div>
-            <div class="code-line"><span class="ln">13</span><span class="code-txt"><span class="tx">&nbsp;&nbsp;);</span></span></div>
-            <div class="code-line"><span class="ln">14</span><span class="code-txt"><span class="tx">}</span></span></div>
-            <div class="code-line"><span class="ln">15</span><span class="code-txt"></span></div>
-            <div class="code-line"><span class="ln">16</span><span class="code-txt"><span class="fn">build</span><span class="tx">(</span><span class="str">"your next project"</span><span class="tx">); </span><span class="acc">▌</span></span></div>
-          </div>
-        </div>
-
-        <div class="hero-badge">
-          <div class="badge-icon">⚡</div>
-          <div class="badge-text">
-            <strong>5 Projects</strong>
-            <span>are live & active</span>
-          </div>
-        </div>
+        <!-- desktop.js injects #win-container here on DOMContentLoaded -->
       </div>
     </div>
   </section>
@@ -378,6 +344,7 @@
 
   <!-- ─── JS ───────────────────────────────────────────────── -->
   <script src="./script.js"></script>
+  <script src="./desktop.js"></script>
 
 </body>
 </html>
