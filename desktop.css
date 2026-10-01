@@ -429,7 +429,7 @@
 /* ─── RETRO WIN95 DESKTOP ────────────────────────────────────── */
 #retro-desktop {
   width: 100%;
-  min-height: 350px;
+  min-height: 380px;
  background:
   linear-gradient(rgba(0,0,0,0.12), rgba(0,0,0,0.12)),
   url("./images/retroWallpaper.jpeg") center / cover no-repeat;
