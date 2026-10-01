@@ -429,22 +429,17 @@
 /* ─── RETRO WIN95 DESKTOP ────────────────────────────────────── */
 #retro-desktop {
   width: 100%;
-  /* Match the code-window height so no layout shift */
-  min-height: 380px;
-  background: #008080; /* Classic Win95 teal */
+  min-height: 350px;
+ background:
+  linear-gradient(rgba(0,0,0,0.12), rgba(0,0,0,0.12)),
+  url("./images/retroWallpaper.jpeg") center / cover no-repeat;
   border: 3px solid #000;
   box-shadow: 9px 9px 0 #000;
-  display: none; /* shown by state machine */
+  display: none;
   flex-direction: column;
   position: relative;
   overflow: hidden;
   font-family: 'VT323', 'Courier New', monospace;
-  /* Subtle Win95 desktop texture */
-  background-image: repeating-linear-gradient(
-    45deg,
-    rgba(0,0,0,0.04) 0px, rgba(0,0,0,0.04) 1px,
-    transparent 1px, transparent 4px
-  );
 }
 
 /* ── Desktop icon area ────────────────────────────────────────── */
